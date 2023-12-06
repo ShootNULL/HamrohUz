@@ -10,17 +10,12 @@ import UIKit
 
 class EnterViewController: UIViewController {
     
-    private lazy var logo = UIImageView()
-    
-    private lazy var mainTitle = UILabel()
-    
-    private lazy var basicLabel = UILabel()
-    
-    private lazy var enterButton = UIButton()
-    
-    private lazy var registerButton = UIButton()
-    
-    private lazy var mainImg = UIImageView()
+    private let logo = UIImageView()
+    private let mainTitle = UILabel()
+    private let basicLabel = UILabel()
+    private let enterButton = UIButton()
+    private let registerButton = UIButton()
+    private let mainImg = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +28,10 @@ class EnterViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpLogo()
-        
         mainLabelSetUp()
-        
         basicLabelSetUp()
-        
         enterButtonSetUp()
-        
         registerButtonSetUp()
-        
         mainImgSetUp()
     }
     
@@ -65,6 +55,7 @@ class EnterViewController: UIViewController {
     private func mainLabelSetUp() {
         
         mainTitle.text = "Создайте аккаунт"
+//        mainTitle.adjustsFontSizeToFitWidth = true
         mainTitle.textColor = .black
         mainTitle.textAlignment = .center
         mainTitle.font = .boldSystemFont(ofSize: 32)
@@ -74,8 +65,8 @@ class EnterViewController: UIViewController {
         
             mainTitle.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 240),
-            mainTitle.widthAnchor.constraint(equalToConstant: 278),
-            mainTitle.heightAnchor.constraint(equalToConstant: 35)
+            mainTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 57),
+            mainTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -57)
         ]
         
         view.addSubview(mainTitle)
@@ -95,8 +86,8 @@ class EnterViewController: UIViewController {
             
             basicLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             basicLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 285),
-            basicLabel.widthAnchor.constraint(equalToConstant: 204),
-            basicLabel.heightAnchor.constraint(equalToConstant: 50)
+            basicLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 94),
+            basicLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -94)
         ]
         
         view.addSubview(basicLabel)
@@ -114,9 +105,9 @@ class EnterViewController: UIViewController {
         
         let enterButtonConstraints = [
         
-            enterButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             enterButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 370),
-            enterButton.widthAnchor.constraint(equalToConstant: 353),
+            enterButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            enterButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             enterButton.heightAnchor.constraint(equalToConstant: 56)
         ]
         
@@ -136,9 +127,9 @@ class EnterViewController: UIViewController {
         
         let registerButtonConstraints = [
         
-            registerButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             registerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 440),
-            registerButton.widthAnchor.constraint(equalToConstant: 353),
+            registerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             registerButton.heightAnchor.constraint(equalToConstant: 56)
         ]
         
