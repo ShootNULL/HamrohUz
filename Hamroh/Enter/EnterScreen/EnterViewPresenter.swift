@@ -12,11 +12,10 @@ protocol EnterViewProtocol {
 }
 
 class EnterViewPresenter: EnterViewProtocol {
+    
     func load() {
         // your code
     }
-    
-    
     
     
 }

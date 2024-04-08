@@ -20,7 +20,6 @@ class EnterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //our code
         setUp()
     }
     
@@ -28,7 +27,7 @@ class EnterViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpLogo()
-        mainLabelSetUp()
+        mainTitleSetUp()
         basicLabelSetUp()
         enterButtonSetUp()
         registerButtonSetUp()
@@ -52,7 +51,7 @@ class EnterViewController: UIViewController {
         NSLayoutConstraint.activate(logoConstraints)
     }
     
-    private func mainLabelSetUp() {
+    private func mainTitleSetUp() {
         
         mainTitle.text = "Создайте аккаунт"
 //        mainTitle.adjustsFontSizeToFitWidth = true
@@ -99,7 +98,7 @@ class EnterViewController: UIViewController {
         enterButton.setTitle("Войти", for: .normal)
         enterButton.setTitleColor(.white, for: .normal)
         enterButton.backgroundColor = .black
-        enterButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        enterButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
         enterButton.layer.cornerRadius = 10
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -120,7 +119,7 @@ class EnterViewController: UIViewController {
         registerButton.setTitle("Зарегистрироваться", for: .normal)
         registerButton.setTitleColor(.black, for: .normal)
         registerButton.backgroundColor = .white
-        registerButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        registerButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
         registerButton.layer.cornerRadius = 10
         registerButton.layer.borderWidth = 1
         registerButton.translatesAutoresizingMaskIntoConstraints = false
