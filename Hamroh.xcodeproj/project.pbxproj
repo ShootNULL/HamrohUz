@@ -14,6 +14,8 @@
 		5CE224CA2B1DEE1F00B7A4D2 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224C92B1DEE1F00B7A4D2 /* EnterViewController.swift */; };
 		5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224CB2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift */; };
 		5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224CF2B1DF01800B7A4D2 /* Kit.swift */; };
+		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
+		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		5CE224C92B1DEE1F00B7A4D2 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		5CE224CB2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewPresenter.swift; sourceTree = "<group>"; };
 		5CE224CF2B1DF01800B7A4D2 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
+		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +73,8 @@
 		5CE224C42B1DEDD500B7A4D2 /* Enter */ = {
 			isa = PBXGroup;
 			children = (
+				D030A5072B20A9020064F2FF /* Registration */,
 				5CE224C52B1DEDE800B7A4D2 /* EnterScreen */,
-				5CE224C72B1DEDF900B7A4D2 /* Registration */,
-				5CE224C62B1DEDF100B7A4D2 /* Login */,
 			);
 			path = Enter;
 			sourceTree = "<group>";
@@ -83,20 +86,6 @@
 				5CE224CB2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift */,
 			);
 			path = EnterScreen;
-			sourceTree = "<group>";
-		};
-		5CE224C62B1DEDF100B7A4D2 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		5CE224C72B1DEDF900B7A4D2 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Registration;
 			sourceTree = "<group>";
 		};
 		5CE224CD2B1DEE3700B7A4D2 /* LowLevel */ = {
@@ -116,6 +105,15 @@
 				5CE224CF2B1DF01800B7A4D2 /* Kit.swift */,
 			);
 			path = Beauty;
+			sourceTree = "<group>";
+		};
+		D030A5072B20A9020064F2FF /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				D030A5082B20A91F0064F2FF /* RegisterViewController.swift */,
+				D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +189,8 @@
 				5CE224CA2B1DEE1F00B7A4D2 /* EnterViewController.swift in Sources */,
 				5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */,
 				5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */,
+				D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */,
+				D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */,
 				5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */,
 				5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */,
 			);
