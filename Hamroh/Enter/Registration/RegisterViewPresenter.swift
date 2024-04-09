@@ -11,7 +11,7 @@ protocol RegisterViewProtocol {
     func load() -> Void
 }
 
-class RegisterViewPresenter: EnterViewProtocol {
+class RegisterViewPresenter: RegisterViewProtocol {
     
     func load() {
         // your code
