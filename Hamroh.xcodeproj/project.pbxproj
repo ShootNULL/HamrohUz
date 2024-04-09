@@ -16,6 +16,8 @@
 		5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224CF2B1DF01800B7A4D2 /* Kit.swift */; };
 		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
 		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
+		D0AB021E2BC53B1D00540225 /* RegistrationPaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */; };
+		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5CE224CF2B1DF01800B7A4D2 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
+		D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewController.swift; sourceTree = "<group>"; };
+		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		5CE224C42B1DEDD500B7A4D2 /* Enter */ = {
 			isa = PBXGroup;
 			children = (
+				D0AB021C2BC53AF600540225 /* RegistrationPassword */,
 				D030A5072B20A9020064F2FF /* Registration */,
 				5CE224C52B1DEDE800B7A4D2 /* EnterScreen */,
 			);
@@ -114,6 +119,15 @@
 				D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		D0AB021C2BC53AF600540225 /* RegistrationPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */,
+				D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */,
+			);
+			path = RegistrationPassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,10 +200,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */,
 				5CE224CA2B1DEE1F00B7A4D2 /* EnterViewController.swift in Sources */,
 				5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */,
 				5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */,
 				D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */,
+				D0AB021E2BC53B1D00540225 /* RegistrationPaswordViewController.swift in Sources */,
 				D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */,
 				5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */,
 				5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */,

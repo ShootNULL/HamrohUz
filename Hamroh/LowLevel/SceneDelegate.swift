@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let loginViewController = RegisterViewController()
+        let loginViewController = RegistrationPaswordViewController()
 //        let loginViewController = DI.shared.getLoginViewController()
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
