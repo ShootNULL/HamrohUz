@@ -134,6 +134,7 @@ class EnterViewController: UIViewController {
         
         view.addSubview(registerButton)
         NSLayoutConstraint.activate(registerButtonConstraints)
+        
     }
     
     private func mainImgSetUp() {

@@ -52,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CB70E322BC5AD990093E0E1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5CE224C42B1DEDD500B7A4D2 /* Enter */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		5CE224A42B1DED5A00B7A4D2 = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +81,9 @@
 		5CE224AF2B1DED5A00B7A4D2 /* Hamroh */ = {
 			isa = PBXGroup;
 			children = (
-				5CE224CE2B1DF00B00B7A4D2 /* Beauty */,
 				5CE224CD2B1DEE3700B7A4D2 /* LowLevel */,
-				5CE224C42B1DEDD500B7A4D2 /* Enter */,
+				5CB70E322BC5AD990093E0E1 /* Screens */,
+				5CE224CE2B1DF00B00B7A4D2 /* Beauty */,
 				5CE224BE2B1DED5B00B7A4D2 /* Info.plist */,
 			);
 			path = Hamroh;
@@ -125,7 +133,6 @@
 				BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */,
 				E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
