@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class RegistrationPaswordViewController: UIViewController {
+class RegistrationPasswordViewController: UIViewController {
     
-    private let mainTitle = UILabel()
-    private let passwordTextField = UITextField()
-    private let enterButton = UIButton()
+    private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Создать учетную запись") ?? UILabel()
+    private let passwordTextField = PrimaryTextFieldK(title: "Введите пароль") ?? UITextField()
+    private let enterButton = PrimaryButtonK(type: true, title: "Создать аккаунт") ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
@@ -44,12 +44,6 @@ class RegistrationPaswordViewController: UIViewController {
     
     private func setUpTitle() {
         
-        mainTitle.text = "Создать учетную запись"
-        mainTitle.textColor = .black
-        mainTitle.font = .boldSystemFont(ofSize: 32)
-        mainTitle.numberOfLines = 2
-        mainTitle.translatesAutoresizingMaskIntoConstraints = false
-        
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
@@ -61,22 +55,8 @@ class RegistrationPaswordViewController: UIViewController {
         NSLayoutConstraint.activate(mainTitleConstraints)
     }
     
+    
     private func setUpTextField() {
-        
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.gray,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)
-        ]
-        
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Введите пароль", attributes: attributes)
-        passwordTextField.textColor = .black
-        passwordTextField.font = .systemFont(ofSize: 16)
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderColor = UIColor(named: "borderColor")!.cgColor
-        passwordTextField.layer.cornerRadius = 10
-        passwordTextField.leftView = UIView(frame: CGRectMake(0, 0, 16, passwordTextField.frame.height))
-        passwordTextField.leftViewMode = UITextField.ViewMode.always
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         
         let textFieldConstraints = [
         
@@ -91,13 +71,6 @@ class RegistrationPaswordViewController: UIViewController {
     }
     
     private func setUpEnterButton() {
-        
-        enterButton.setTitle("Войти", for: .normal)
-        enterButton.setTitleColor(.white, for: .normal)
-        enterButton.backgroundColor = .black
-        enterButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        enterButton.layer.cornerRadius = 10
-        enterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let createButtonConstraints = [
         
@@ -175,9 +148,8 @@ class RegistrationPaswordViewController: UIViewController {
     private func setUpExistingEnterButton() {
         
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
-        let underlineAttributeTitle = NSAttributedString(string: "Войти", attributes: underlineAttribute)
         
-        existingEnterButton.setAttributedTitle(underlineAttributeTitle, for: .normal)
+        existingEnterButton.setAttributedTitle(NSAttributedString(string: "Войти", attributes: underlineAttribute), for: .normal)
         existingEnterButton.setTitleColor(.black, for: .normal)
         existingEnterButton.backgroundColor = .none
         existingEnterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)

@@ -11,10 +11,10 @@ import UIKit
 class EnterViewController: UIViewController {
     
     private let logo = UIImageView()
-    private let mainTitle = UILabel()
+    private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Создайте аккаунт") ?? UILabel()
     private let basicLabel = UILabel()
-    private let enterButton = UIButton()
-    private let registerButton = UIButton()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти") ?? UIButton()
+    private let registerButton = PrimaryButtonK(type: false, title: "Зарегестрироваться") ?? UIButton()
     private let mainImg = UIImageView()
     
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ class EnterViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpLogo()
-        mainTitleSetUp()
-        basicLabelSetUp()
-        enterButtonSetUp()
-        registerButtonSetUp()
-        mainImgSetUp()
+        setUpMainTitle()
+        setUpBasicLabel()
+        setUpEnterButton()
+        setUpRegisterButton()
+        setUpMainImg()
     }
     
     private func setUpLogo() {
@@ -51,15 +51,10 @@ class EnterViewController: UIViewController {
         NSLayoutConstraint.activate(logoConstraints)
     }
     
-    private func mainTitleSetUp() {
-        
-        mainTitle.text = "Создайте аккаунт"
-//        mainTitle.adjustsFontSizeToFitWidth = true
-        mainTitle.textColor = .black
+    private func setUpMainTitle() {
+
         mainTitle.textAlignment = .center
-        mainTitle.font = .boldSystemFont(ofSize: 32)
-        mainTitle.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let mainTitleConstraints = [
         
             mainTitle.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -72,7 +67,7 @@ class EnterViewController: UIViewController {
         NSLayoutConstraint.activate(mainTitleConstraints)
     }
     
-    private func basicLabelSetUp() {
+    private func setUpBasicLabel() {
         
         basicLabel.text = "И пользуйтесь всеми возможностями поездок"
         basicLabel.textColor = .gray
@@ -93,14 +88,7 @@ class EnterViewController: UIViewController {
         NSLayoutConstraint.activate(basicLabelConstraints)
     }
     
-    private func enterButtonSetUp() {
-        
-        enterButton.setTitle("Войти", for: .normal)
-        enterButton.setTitleColor(.white, for: .normal)
-        enterButton.backgroundColor = .black
-        enterButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        enterButton.layer.cornerRadius = 10
-        enterButton.translatesAutoresizingMaskIntoConstraints = false
+    private func setUpEnterButton() {
         
         let enterButtonConstraints = [
         
@@ -114,15 +102,7 @@ class EnterViewController: UIViewController {
         NSLayoutConstraint.activate(enterButtonConstraints)
     }
     
-    private func registerButtonSetUp() {
-        
-        registerButton.setTitle("Зарегистрироваться", for: .normal)
-        registerButton.setTitleColor(.black, for: .normal)
-        registerButton.backgroundColor = .white
-        registerButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        registerButton.layer.cornerRadius = 10
-        registerButton.layer.borderWidth = 1
-        registerButton.translatesAutoresizingMaskIntoConstraints = false
+    private func setUpRegisterButton() {
         
         let registerButtonConstraints = [
         
@@ -137,7 +117,7 @@ class EnterViewController: UIViewController {
         
     }
     
-    private func mainImgSetUp() {
+    private func setUpMainImg() {
         
         mainImg.image = UIImage(named: "MainImg")
         mainImg.translatesAutoresizingMaskIntoConstraints = false
