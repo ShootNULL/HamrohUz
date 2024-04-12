@@ -1,5 +1,5 @@
 //
-//  LogInViewController.swift
+//  LogInPasswordViewController.swift
 //  Hamroh
 //
 //  Created by Peter on 12.04.2024.
@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInPasswordViewController: UIViewController {
     
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Войти") ?? UILabel()
-    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email") ?? UITextField()
-    private let enterButton = PrimaryButtonK(type: true, title: "Далее") ?? UIButton()
+    private let passwordTextField = PrimaryTextFieldK(title: "Введите пароль") ?? UITextField()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти") ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
@@ -60,13 +60,13 @@ class LogInViewController: UIViewController {
         
         let textFieldConstraints = [
         
-            mailTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
-            mailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            mailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            mailTextField.heightAnchor.constraint(equalToConstant: 56)
+            passwordTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
+            passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 56)
         ]
         
-        view.addSubview(mailTextField)
+        view.addSubview(passwordTextField)
         NSLayoutConstraint.activate(textFieldConstraints)
     }
     
@@ -74,7 +74,7 @@ class LogInViewController: UIViewController {
         
         let createButtonConstraints = [
         
-            enterButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 30),
+            enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             enterButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
             enterButton.heightAnchor.constraint(equalToConstant: 56)
