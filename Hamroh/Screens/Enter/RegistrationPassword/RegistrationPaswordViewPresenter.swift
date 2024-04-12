@@ -11,7 +11,7 @@ protocol RegisterPasswordViewProtocol {
     func load() -> Void
 }
 
-class RegisterPasswordView: RegisterPasswordViewProtocol {
+class RegisterPasswordViewPresenter: RegisterPasswordViewProtocol {
     
     func load() {
         // your code
