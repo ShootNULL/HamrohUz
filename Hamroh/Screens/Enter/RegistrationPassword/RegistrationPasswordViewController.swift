@@ -176,7 +176,7 @@ class RegistrationPasswordViewController: UIViewController {
         
             enterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             enterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterStack.widthAnchor.constraint(equalToConstant: 174)
+            enterStack.widthAnchor.constraint(equalToConstant: 175)
         ]
         
         view.addSubview(enterStack)

@@ -16,6 +16,8 @@
 		5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224CF2B1DF01800B7A4D2 /* Kit.swift */; };
 		D00A548D2BC9617500F686F5 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A548C2BC9617500F686F5 /* LogInViewController.swift */; };
 		D00A548F2BC961BB00F686F5 /* LogInViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A548E2BC961BB00F686F5 /* LogInViewPresenter.swift */; };
+		D00A54942BC96FFB00F686F5 /* LogInPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54932BC96FFB00F686F5 /* LogInPasswordViewController.swift */; };
+		D00A54962BC9701A00F686F5 /* LogInPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54952BC9701A00F686F5 /* LogInPasswordViewPresenter.swift */; };
 		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
 		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
 		D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */; };
@@ -37,6 +39,8 @@
 		BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.debug.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.debug.xcconfig"; sourceTree = "<group>"; };
 		D00A548C2BC9617500F686F5 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		D00A548E2BC961BB00F686F5 /* LogInViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewPresenter.swift; sourceTree = "<group>"; };
+		D00A54932BC96FFB00F686F5 /* LogInPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordViewController.swift; sourceTree = "<group>"; };
+		D00A54952BC9701A00F686F5 /* LogInPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordViewPresenter.swift; sourceTree = "<group>"; };
 		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
 		D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPasswordViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		5CE224C42B1DEDD500B7A4D2 /* Enter */ = {
 			isa = PBXGroup;
 			children = (
+				D00A54922BC96FE100F686F5 /* LogInPassword */,
 				D00A548B2BC9613300F686F5 /* LogIn */,
 				D0AB021C2BC53AF600540225 /* RegistrationPassword */,
 				D030A5072B20A9020064F2FF /* Registration */,
@@ -148,6 +153,15 @@
 				D00A548E2BC961BB00F686F5 /* LogInViewPresenter.swift */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		D00A54922BC96FE100F686F5 /* LogInPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D00A54932BC96FFB00F686F5 /* LogInPasswordViewController.swift */,
+				D00A54952BC9701A00F686F5 /* LogInPasswordViewPresenter.swift */,
+			);
+			path = LogInPassword;
 			sourceTree = "<group>";
 		};
 		D030A5072B20A9020064F2FF /* Registration */ = {
@@ -272,7 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00A54962BC9701A00F686F5 /* LogInPasswordViewPresenter.swift in Sources */,
 				D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */,
+				D00A54942BC96FFB00F686F5 /* LogInPasswordViewController.swift in Sources */,
 				5CE224CA2B1DEE1F00B7A4D2 /* EnterViewController.swift in Sources */,
 				5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */,
 				5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */,

@@ -14,7 +14,7 @@ class RegisterViewController: UIViewController {
     private let mailTextField = PrimaryTextFieldK(title: "Ваш Email") ?? UITextField()
     private let checkButton = UIButton()
     private let privacyLabel = UILabel()
-    private let createButton = PrimaryButtonK(type: true, title: "Дальше") ?? UIButton()
+    private let createButton = PrimaryButtonK(type: true, title: "Далее") ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
@@ -214,7 +214,7 @@ class RegisterViewController: UIViewController {
         
             enterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             enterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterStack.widthAnchor.constraint(equalToConstant: 174)
+            enterStack.widthAnchor.constraint(equalToConstant: 175)
         ]
         
         view.addSubview(enterStack)
