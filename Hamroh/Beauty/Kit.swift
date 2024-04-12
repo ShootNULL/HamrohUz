@@ -55,7 +55,7 @@ final class PrimaryButtonK: UIButton {
     
     private func setUp() {
         self.setTitle(title, for: .normal)
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 12
         self.titleLabel?.font = .boldSystemFont(ofSize: 16)
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -98,7 +98,7 @@ final class PrimaryTextFieldK: UITextField {
         self.font = .systemFont(ofSize: 16)
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "textFieldBorderColor")!.cgColor
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 12
         self.leftView = UIView(frame: CGRectMake(0, 0, 16, self.frame.height))
         self.leftViewMode = UITextField.ViewMode.always
         self.translatesAutoresizingMaskIntoConstraints = false
