@@ -10,17 +10,17 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    private let mainTitle = UILabel()
-    private let mailTextField = UITextField()
+    private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Создать учетную запись") ?? UILabel()
+    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email") ?? UITextField()
     private let checkButton = UIButton()
     private let privacyLabel = UILabel()
-    private let createButton = UIButton()
+    private let createButton = PrimaryButtonK(type: true, title: "Дальше") ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
     private let anotherEnterStack = UIStackView()
     private let hasAccountLabel = UILabel()
-    private let enterButton = UIButton()
+    private let existingEnterButton = UIButton()
     private let enterStack = UIStackView()
     
     override func viewDidLoad() {
@@ -42,18 +42,12 @@ class RegisterViewController: UIViewController {
         setUpAppleButton()
         setUpAnotherEnterStack()
         setUpHasAccountLabel()
-        setUpEnterButton()
+        setUpExistingEnterButton()
         setUpEnterStack()
     }
     
     private func setUpTitle() {
-        
-        mainTitle.text = "Создать учетную запись"
-        mainTitle.textColor = .black
-        mainTitle.font = .boldSystemFont(ofSize: 32)
-        mainTitle.numberOfLines = 2
-        mainTitle.translatesAutoresizingMaskIntoConstraints = false
-        
+          
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
@@ -66,22 +60,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func setUpTextField() {
-        
-        let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.gray,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)
-        ]
-        
-        mailTextField.attributedPlaceholder = NSAttributedString(string: "Ваш Email", attributes: attributes)
-        mailTextField.textColor = .black
-        mailTextField.font = .systemFont(ofSize: 16)
-        mailTextField.layer.borderWidth = 1
-        mailTextField.layer.borderColor = UIColor(named: "borderColor")!.cgColor
-        mailTextField.layer.cornerRadius = 10
-        mailTextField.leftView = UIView(frame: CGRectMake(0, 0, 16, mailTextField.frame.height))
-        mailTextField.leftViewMode = UITextField.ViewMode.always
-        mailTextField.translatesAutoresizingMaskIntoConstraints = false
-        
+          
         let textFieldConstraints = [
         
             mailTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
@@ -130,13 +109,6 @@ class RegisterViewController: UIViewController {
     }
     
     private func setUpCreateButton() {
-        
-        createButton.setTitle("Создать аккаунт", for: .normal)
-        createButton.setTitleColor(.white, for: .normal)
-        createButton.backgroundColor = .black
-        createButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        createButton.layer.cornerRadius = 10
-        createButton.translatesAutoresizingMaskIntoConstraints = false
         
         let createButtonConstraints = [
         
@@ -211,24 +183,23 @@ class RegisterViewController: UIViewController {
         enterStack.addArrangedSubview(hasAccountLabel)
     }
     
-    private func setUpEnterButton() {
+    private func setUpExistingEnterButton() {
         
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
-        let underlineAttributeTitle = NSAttributedString(string: "Войти", attributes: underlineAttribute)
         
-        enterButton.setAttributedTitle(underlineAttributeTitle, for: .normal)
-        enterButton.setTitleColor(.black, for: .normal)
-        enterButton.backgroundColor = .none
-        enterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        enterButton.translatesAutoresizingMaskIntoConstraints = false
+        existingEnterButton.setAttributedTitle(NSAttributedString(string: "Войти", attributes: underlineAttribute), for: .normal)
+        existingEnterButton.setTitleColor(.black, for: .normal)
+        existingEnterButton.backgroundColor = .none
+        existingEnterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        existingEnterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let enterButtonConstraints = [
         
-            enterButton.widthAnchor.constraint(equalToConstant: 44),
-            enterButton.heightAnchor.constraint(equalToConstant: 18)
+            existingEnterButton.widthAnchor.constraint(equalToConstant: 44),
+            existingEnterButton.heightAnchor.constraint(equalToConstant: 18)
         ]
         
-        enterStack.addArrangedSubview(enterButton)
+        enterStack.addArrangedSubview(existingEnterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)
     }
     

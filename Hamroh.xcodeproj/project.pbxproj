@@ -16,7 +16,7 @@
 		5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224CF2B1DF01800B7A4D2 /* Kit.swift */; };
 		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
 		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
-		D0AB021E2BC53B1D00540225 /* RegistrationPaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */; };
+		D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */; };
 		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 		FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.debug.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.debug.xcconfig"; sourceTree = "<group>"; };
 		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
-		D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewController.swift; sourceTree = "<group>"; };
+		D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPasswordViewController.swift; sourceTree = "<group>"; };
 		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 		E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.release.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +148,7 @@
 		D0AB021C2BC53AF600540225 /* RegistrationPassword */ = {
 			isa = PBXGroup;
 			children = (
-				D0AB021D2BC53B1D00540225 /* RegistrationPaswordViewController.swift */,
+				D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */,
 				D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */,
 			);
 			path = RegistrationPassword;
@@ -263,7 +263,7 @@
 				5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */,
 				5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */,
 				D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */,
-				D0AB021E2BC53B1D00540225 /* RegistrationPaswordViewController.swift in Sources */,
+				D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */,
 				D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */,
 				5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */,
 				5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */,
