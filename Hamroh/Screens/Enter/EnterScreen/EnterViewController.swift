@@ -13,8 +13,8 @@ class EnterViewController: UIViewController {
     private let logo = UIImageView()
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Создайте аккаунт") ?? UILabel()
     private let basicLabel = UILabel()
-    private let enterButton = PrimaryButtonK(type: true, title: "Войти") ?? UIButton()
-    private let registerButton = PrimaryButtonK(type: false, title: "Зарегестрироваться") ?? UIButton()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 56) ?? UIButton()
+    private let registerButton = PrimaryButtonK(type: false, title: "Зарегистрироваться", height: 56) ?? UIButton()
     private let mainImg = UIImageView()
     
     override func viewDidLoad() {
@@ -29,9 +29,10 @@ class EnterViewController: UIViewController {
         setUpLogo()
         setUpMainTitle()
         setUpBasicLabel()
+        setUpMainImg()
         setUpEnterButton()
         setUpRegisterButton()
-        setUpMainImg()
+//        setUpMainImg()
     }
     
     private func setUpLogo() {
@@ -58,9 +59,7 @@ class EnterViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 240),
-            mainTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 57),
-            mainTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -57)
+            mainTitle.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 78)
         ]
         
         view.addSubview(mainTitle)
@@ -69,19 +68,17 @@ class EnterViewController: UIViewController {
     
     private func setUpBasicLabel() {
         
-        basicLabel.text = "И пользуйтесь всеми возможностями поездок"
+        basicLabel.text = "И пользуйтесь всеми\nвозможностями поездок"
         basicLabel.textColor = .gray
         basicLabel.textAlignment = .center
         basicLabel.numberOfLines = 2
-        basicLabel.font = .systemFont(ofSize: 17)
+        basicLabel.font = UIFont(name: "Inter-Regular", size: 16)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let basicLabelConstraints = [
             
             basicLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            basicLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 285),
-            basicLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 94),
-            basicLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -94)
+            basicLabel.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 10)
         ]
         
         view.addSubview(basicLabel)
@@ -92,10 +89,9 @@ class EnterViewController: UIViewController {
         
         let enterButtonConstraints = [
         
-            enterButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 370),
+            enterButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor, constant: 30),
             enterButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            enterButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            enterButton.heightAnchor.constraint(equalToConstant: 56)
+            enterButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]
         
         view.addSubview(enterButton)
@@ -106,10 +102,9 @@ class EnterViewController: UIViewController {
         
         let registerButtonConstraints = [
         
-            registerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 440),
+            registerButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 10),
             registerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            registerButton.heightAnchor.constraint(equalToConstant: 56)
+            registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]
         
         view.addSubview(registerButton)

@@ -11,10 +11,10 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Создать учетную запись") ?? UILabel()
-    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email") ?? UITextField()
+    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email", height: 56) ?? UITextField()
     private let checkButton = UIButton()
     private let privacyLabel = UILabel()
-    private let createButton = PrimaryButtonK(type: true, title: "Далее") ?? UIButton()
+    private let createButton = PrimaryButtonK(type: true, title: "Далее", height: 56) ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController {
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 75),
-            mainTitle.widthAnchor.constraint(equalToConstant: 244)
+            mainTitle.widthAnchor.constraint(equalToConstant: 257)
         ]
         
         view.addSubview(mainTitle)
@@ -65,8 +65,7 @@ class RegisterViewController: UIViewController {
         
             mailTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
             mailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            mailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            mailTextField.heightAnchor.constraint(equalToConstant: 56)
+            mailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]
         
         view.addSubview(mailTextField)
@@ -80,7 +79,7 @@ class RegisterViewController: UIViewController {
         
         let checkButtonConstraints = [
         
-            checkButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 30),
+            checkButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 29),
             checkButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             checkButton.heightAnchor.constraint(equalToConstant: 20),
             checkButton.widthAnchor.constraint(equalToConstant: 20)
@@ -93,13 +92,13 @@ class RegisterViewController: UIViewController {
     private func setUpPrivacyLabel() {
         
         privacyLabel.text = "Я принимаю пользовательское соглашение"
-        privacyLabel.font = .systemFont(ofSize: 14)
+        privacyLabel.font = UIFont(name: "Inter-Regular", size: 14)
         privacyLabel.textColor = .black
         privacyLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let privacyLabelConstraints = [
         
-            privacyLabel.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 32),
+            privacyLabel.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 30),
             privacyLabel.leftAnchor.constraint(equalTo: checkButton.rightAnchor, constant: 12),
             privacyLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20)
         ]
@@ -114,8 +113,7 @@ class RegisterViewController: UIViewController {
         
             createButton.topAnchor.constraint(equalTo: privacyLabel.bottomAnchor, constant: 30),
             createButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            createButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-            createButton.heightAnchor.constraint(equalToConstant: 56)
+            createButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20)
         ]
         
         view.addSubview(createButton)
@@ -125,7 +123,7 @@ class RegisterViewController: UIViewController {
     private func setUpAnotherEnterlabel() {
         
         anotherEnterlabel.text = "Или войти с помощью:"
-        anotherEnterlabel.font = .systemFont(ofSize: 14)
+        anotherEnterlabel.font = UIFont(name: "Inter-Regular", size: 14)
         anotherEnterlabel.textColor = .gray
         anotherEnterlabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -177,7 +175,7 @@ class RegisterViewController: UIViewController {
         
         hasAccountLabel.text = "Уже есть аккаунт?"
         hasAccountLabel.textColor = .gray
-        hasAccountLabel.font = .systemFont(ofSize: 14)
+        hasAccountLabel.font = UIFont(name: "Inter-Regular", size: 14)
         hasAccountLabel.translatesAutoresizingMaskIntoConstraints = false
         
         enterStack.addArrangedSubview(hasAccountLabel)
@@ -190,7 +188,7 @@ class RegisterViewController: UIViewController {
         existingEnterButton.setAttributedTitle(NSAttributedString(string: "Войти", attributes: underlineAttribute), for: .normal)
         existingEnterButton.setTitleColor(.black, for: .normal)
         existingEnterButton.backgroundColor = .none
-        existingEnterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        existingEnterButton.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 14)
         existingEnterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let enterButtonConstraints = [
@@ -214,7 +212,7 @@ class RegisterViewController: UIViewController {
         
             enterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             enterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterStack.widthAnchor.constraint(equalToConstant: 175)
+            enterStack.widthAnchor.constraint(equalToConstant: 177)
         ]
         
         view.addSubview(enterStack)

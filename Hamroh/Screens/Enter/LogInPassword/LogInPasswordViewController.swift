@@ -11,8 +11,8 @@ import UIKit
 class LogInPasswordViewController: UIViewController {
     
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Войти") ?? UILabel()
-    private let passwordTextField = PrimaryTextFieldK(title: "Введите пароль") ?? UITextField()
-    private let enterButton = PrimaryButtonK(type: true, title: "Войти") ?? UIButton()
+    private let passwordTextField = PrimaryTextFieldK(title: "Введите пароль", height: 56) ?? UITextField()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 56) ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
@@ -62,8 +62,7 @@ class LogInPasswordViewController: UIViewController {
         
             passwordTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
             passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 56)
+            passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]
         
         view.addSubview(passwordTextField)
@@ -76,8 +75,7 @@ class LogInPasswordViewController: UIViewController {
         
             enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             enterButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-            enterButton.heightAnchor.constraint(equalToConstant: 56)
+            enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20)
         ]
         
         view.addSubview(enterButton)
@@ -86,8 +84,8 @@ class LogInPasswordViewController: UIViewController {
     
     private func setUpAnotherEnterlabel() {
         
-        anotherEnterlabel.text = "Или войти с помощью:"
-        anotherEnterlabel.font = .systemFont(ofSize: 14)
+        anotherEnterlabel.text = "Войти с помощью:"
+        anotherEnterlabel.font = UIFont(name: "Inter-Regular", size: 14)
         anotherEnterlabel.textColor = .gray
         anotherEnterlabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -139,7 +137,7 @@ class LogInPasswordViewController: UIViewController {
         
         hasAccountLabel.text = "Нет аккаунта?"
         hasAccountLabel.textColor = .gray
-        hasAccountLabel.font = .systemFont(ofSize: 14)
+        hasAccountLabel.font = UIFont(name: "Inter-Regular", size: 14)
         hasAccountLabel.translatesAutoresizingMaskIntoConstraints = false
         
         enterStack.addArrangedSubview(hasAccountLabel)
@@ -152,7 +150,7 @@ class LogInPasswordViewController: UIViewController {
         existingEnterButton.setAttributedTitle(NSAttributedString(string: "Зарегистрироваться", attributes: underlineAttribute), for: .normal)
         existingEnterButton.setTitleColor(.black, for: .normal)
         existingEnterButton.backgroundColor = .none
-        existingEnterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        existingEnterButton.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 14)
         existingEnterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let enterButtonConstraints = [
@@ -176,7 +174,7 @@ class LogInPasswordViewController: UIViewController {
         
             enterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             enterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterStack.widthAnchor.constraint(equalToConstant: 250)
+            enterStack.widthAnchor.constraint(equalToConstant: 251)
         ]
         
         view.addSubview(enterStack)
