@@ -32,6 +32,8 @@
 		D03571E42BD9579F00E5730F /* ForgotPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */; };
 		D03571E72BD961AA00E5730F /* EnterNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E62BD961AA00E5730F /* EnterNewPasswordViewController.swift */; };
 		D03571E92BD961C200E5730F /* EnterNewPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E82BD961C200E5730F /* EnterNewPasswordViewPresenter.swift */; };
+		D03571EC2BD96A6100E5730F /* PasswordChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571EB2BD96A6100E5730F /* PasswordChangedViewController.swift */; };
+		D03571EE2BD96AA300E5730F /* PasswordChangedViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571ED2BD96AA300E5730F /* PasswordChangedViewPresenter.swift */; };
 		D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */; };
 		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 		FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */; };
@@ -67,6 +69,8 @@
 		D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewPresenter.swift; sourceTree = "<group>"; };
 		D03571E62BD961AA00E5730F /* EnterNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNewPasswordViewController.swift; sourceTree = "<group>"; };
 		D03571E82BD961C200E5730F /* EnterNewPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNewPasswordViewPresenter.swift; sourceTree = "<group>"; };
+		D03571EB2BD96A6100E5730F /* PasswordChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedViewController.swift; sourceTree = "<group>"; };
+		D03571ED2BD96AA300E5730F /* PasswordChangedViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedViewPresenter.swift; sourceTree = "<group>"; };
 		D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPasswordViewController.swift; sourceTree = "<group>"; };
 		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 		E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.release.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				D00A54A52BCECF9D00F686F5 /* AccountCreated  */,
 				D03571E02BD9568B00E5730F /* ForgotPassword */,
 				D03571E52BD9617600E5730F /* EnterNewPassword */,
+				D03571EA2BD96A3D00E5730F /* PasswordChanged */,
 			);
 			path = Enter;
 			sourceTree = "<group>";
@@ -247,6 +252,15 @@
 				D03571E82BD961C200E5730F /* EnterNewPasswordViewPresenter.swift */,
 			);
 			path = EnterNewPassword;
+			sourceTree = "<group>";
+		};
+		D03571EA2BD96A3D00E5730F /* PasswordChanged */ = {
+			isa = PBXGroup;
+			children = (
+				D03571EB2BD96A6100E5730F /* PasswordChangedViewController.swift */,
+				D03571ED2BD96AA300E5730F /* PasswordChangedViewPresenter.swift */,
+			);
+			path = PasswordChanged;
 			sourceTree = "<group>";
 		};
 		D0AB021C2BC53AF600540225 /* RegistrationPassword */ = {
@@ -366,8 +380,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03571EE2BD96AA300E5730F /* PasswordChangedViewPresenter.swift in Sources */,
 				D00A549B2BCA5E1800F686F5 /* GetCodeViewPresenter.swift in Sources */,
 				D00A54962BC9701A00F686F5 /* LogInPasswordViewPresenter.swift in Sources */,
+				D03571EC2BD96A6100E5730F /* PasswordChangedViewController.swift in Sources */,
 				D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */,
 				D03571E92BD961C200E5730F /* EnterNewPasswordViewPresenter.swift in Sources */,
 				D00A54942BC96FFB00F686F5 /* LogInPasswordViewController.swift in Sources */,

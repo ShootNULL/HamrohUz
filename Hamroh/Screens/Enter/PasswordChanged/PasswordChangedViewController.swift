@@ -1,17 +1,17 @@
 //
-//  AccountCreatedViewController.swift
+//  PasswordChangedViewController.swift
 //  Hamroh
 //
-//  Created by Peter on 16.04.2024.
+//  Created by Peter on 24.04.2024.
 //
 
 import Foundation
 import UIKit
 
-class AccountCreatedViewController: UIViewController {
+class PasswordChangedViewController: UIViewController {
     
     private let image = UIImageView()
-    private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Аккаунт создан") ?? UILabel()
+    private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Пароль успешно\nизменен") ?? UILabel()
     private let basicLabel = UILabel()
     private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 52) ?? UIButton()
     
@@ -61,10 +61,10 @@ class AccountCreatedViewController: UIViewController {
     
     private func setUpBasicLabel() {
         
-        basicLabel.text = "Теперь вы можете пользоваться\nприложением!"
+        basicLabel.text = "Теперь вы можете войти в приложение!"
         basicLabel.textColor = UIColor(named: "primaryGray")
         basicLabel.textAlignment = .center
-        basicLabel.numberOfLines = 2
+        basicLabel.numberOfLines = 1
         basicLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
