@@ -28,6 +28,8 @@
 		D03571DD2BD91C0600E5730F /* SFProRounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */; };
 		D03571DE2BD91C0600E5730F /* SFProRounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */; };
 		D03571DF2BD91C0600E5730F /* SFProRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */; };
+		D03571E22BD9578E00E5730F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E12BD9578E00E5730F /* ForgotPasswordViewController.swift */; };
+		D03571E42BD9579F00E5730F /* ForgotPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */; };
 		D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */; };
 		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 		FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */; };
@@ -59,6 +61,8 @@
 		D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Regular.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Regular.otf"; sourceTree = "<group>"; };
 		D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Semibold.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Semibold.otf"; sourceTree = "<group>"; };
 		D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Medium.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Medium.otf"; sourceTree = "<group>"; };
+		D03571E12BD9578E00E5730F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewPresenter.swift; sourceTree = "<group>"; };
 		D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPasswordViewController.swift; sourceTree = "<group>"; };
 		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 		E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.release.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				D00A54922BC96FE100F686F5 /* LogInPassword */,
 				D00A54972BCA5DC800F686F5 /* GetCode */,
 				D00A54A52BCECF9D00F686F5 /* AccountCreated  */,
+				D03571E02BD9568B00E5730F /* ForgotPassword */,
 			);
 			path = Enter;
 			sourceTree = "<group>";
@@ -219,6 +224,15 @@
 				D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		D03571E02BD9568B00E5730F /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D03571E12BD9578E00E5730F /* ForgotPasswordViewController.swift */,
+				D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		D0AB021C2BC53AF600540225 /* RegistrationPassword */ = {
@@ -346,12 +360,14 @@
 				D00A54A72BCECFEF00F686F5 /* AccountCreatedViewController.swift in Sources */,
 				5CE224D02B1DF01800B7A4D2 /* Kit.swift in Sources */,
 				5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */,
+				D03571E42BD9579F00E5730F /* ForgotPasswordViewPresenter.swift in Sources */,
 				D00A54992BCA5DEE00F686F5 /* GetCodeViewController.swift in Sources */,
 				D00A54A92BCED02400F686F5 /* AccountCreatedViewPresenter.swift in Sources */,
 				D00A548F2BC961BB00F686F5 /* LogInViewPresenter.swift in Sources */,
 				D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */,
 				D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */,
 				D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */,
+				D03571E22BD9578E00E5730F /* ForgotPasswordViewController.swift in Sources */,
 				5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */,
 				D00A548D2BC9617500F686F5 /* LogInViewController.swift in Sources */,
 				5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */,
