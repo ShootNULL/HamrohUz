@@ -4,10 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Regular.ttf</string>
-		<string>Inter-Medium.ttf</string>
-		<string>Inter-Bold.ttf</string>
-		<string>Inter-SemiBold.ttf</string>
+		<string>SFProRounded-Semibold.otf</string>
+		<string>SFProRounded-Regular.otf</string>
+		<string>SFProRounded-Medium.otf</string>
+		<string>SFProRounded-Bold.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

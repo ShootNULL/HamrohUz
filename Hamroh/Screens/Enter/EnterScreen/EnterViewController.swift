@@ -13,8 +13,8 @@ class EnterViewController: UIViewController {
     private let logo = UIImageView()
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Создайте аккаунт") ?? UILabel()
     private let basicLabel = UILabel()
-    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 56) ?? UIButton()
-    private let registerButton = PrimaryButtonK(type: false, title: "Зарегистрироваться", height: 56) ?? UIButton()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 52) ?? UIButton()
+    private let registerButton = PrimaryButtonK(type: false, title: "Зарегистрироваться", height: 52) ?? UIButton()
     private let mainImg = UIImageView()
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ class EnterViewController: UIViewController {
         setUpMainImg()
         setUpEnterButton()
         setUpRegisterButton()
-//        setUpMainImg()
     }
     
     private func setUpLogo() {
@@ -59,7 +58,7 @@ class EnterViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainTitle.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 78)
+            mainTitle.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 70)
         ]
         
         view.addSubview(mainTitle)
@@ -69,16 +68,16 @@ class EnterViewController: UIViewController {
     private func setUpBasicLabel() {
         
         basicLabel.text = "И пользуйтесь всеми\nвозможностями поездок"
-        basicLabel.textColor = .gray
+        basicLabel.textColor = UIColor(named: "primaryGray")
         basicLabel.textAlignment = .center
         basicLabel.numberOfLines = 2
-        basicLabel.font = UIFont(name: "Inter-Regular", size: 16)
+        basicLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let basicLabelConstraints = [
             
             basicLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            basicLabel.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 10)
+            basicLabel.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 16)
         ]
         
         view.addSubview(basicLabel)
@@ -89,7 +88,7 @@ class EnterViewController: UIViewController {
         
         let enterButtonConstraints = [
         
-            enterButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor, constant: 30),
+            enterButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor, constant: 40),
             enterButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             enterButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]

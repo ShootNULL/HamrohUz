@@ -10,18 +10,18 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Создать учетную запись") ?? UILabel()
-    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email", height: 56) ?? UITextField()
+    private let mainTitle = PrimaryTitleK(numberLines: 2, title: "Создать учетную\nзапись") ?? UILabel()
+    private let mailTextField = PrimaryTextFieldK(title: "Ваш Email", height: 52) ?? UITextField()
     private let checkButton = UIButton()
     private let privacyLabel = UILabel()
-    private let createButton = PrimaryButtonK(type: true, title: "Далее", height: 56) ?? UIButton()
+    private let createButton = PrimaryButtonK(type: true, title: "Далее", height: 52) ?? UIButton()
     private let anotherEnterlabel = UILabel()
     private let googleButton = UIButton()
     private let appleButton = UIButton()
     private let anotherEnterStack = UIStackView()
     private let hasAccountLabel = UILabel()
     private let existingEnterButton = UIButton()
-    private let enterStack = UIStackView()
+    private let existingEnterStack = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
         setUpAnotherEnterStack()
         setUpHasAccountLabel()
         setUpExistingEnterButton()
-        setUpEnterStack()
+        setUpExistingEnterStack()
     }
     
     private func setUpTitle() {
@@ -51,8 +51,7 @@ class RegisterViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 75),
-            mainTitle.widthAnchor.constraint(equalToConstant: 257)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56)
         ]
         
         view.addSubview(mainTitle)
@@ -63,7 +62,7 @@ class RegisterViewController: UIViewController {
           
         let textFieldConstraints = [
         
-            mailTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 36),
+            mailTextField.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 30),
             mailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             mailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ]
@@ -79,10 +78,10 @@ class RegisterViewController: UIViewController {
         
         let checkButtonConstraints = [
         
-            checkButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 29),
+            checkButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 20),
             checkButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            checkButton.heightAnchor.constraint(equalToConstant: 20),
-            checkButton.widthAnchor.constraint(equalToConstant: 20)
+            checkButton.heightAnchor.constraint(equalToConstant: 16),
+            checkButton.widthAnchor.constraint(equalToConstant: 16)
         ]
         
         view.addSubview(checkButton)
@@ -91,15 +90,16 @@ class RegisterViewController: UIViewController {
     
     private func setUpPrivacyLabel() {
         
-        privacyLabel.text = "Я принимаю пользовательское соглашение"
-        privacyLabel.font = UIFont(name: "Inter-Regular", size: 14)
-        privacyLabel.textColor = .black
+        privacyLabel.text = "Я согласен на обработку данных и ознакомлен с\nпользовательсим соглашением"
+        privacyLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
+        privacyLabel.numberOfLines = 2
+        privacyLabel.textColor = UIColor(named: "primaryBlack")
         privacyLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let privacyLabelConstraints = [
         
-            privacyLabel.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 30),
-            privacyLabel.leftAnchor.constraint(equalTo: checkButton.rightAnchor, constant: 12),
+            privacyLabel.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 20),
+            privacyLabel.leftAnchor.constraint(equalTo: checkButton.rightAnchor, constant: 8),
             privacyLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20)
         ]
         
@@ -123,8 +123,8 @@ class RegisterViewController: UIViewController {
     private func setUpAnotherEnterlabel() {
         
         anotherEnterlabel.text = "Или войти с помощью:"
-        anotherEnterlabel.font = UIFont(name: "Inter-Regular", size: 14)
-        anotherEnterlabel.textColor = .gray
+        anotherEnterlabel.font = UIFont(name: "SFProRounded-Regular", size: 14)
+        anotherEnterlabel.textColor = UIColor(named: "primaryGray")
         anotherEnterlabel.translatesAutoresizingMaskIntoConstraints = false
         
         let anotherEnterlabelConstrints = [
@@ -142,7 +142,13 @@ class RegisterViewController: UIViewController {
         googleButton.setImage(UIImage(named: "google"), for: .normal)
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
+        let googleButtonConstraints = [
+            googleButton.widthAnchor.constraint(equalToConstant: 46),
+            googleButton.heightAnchor.constraint(equalToConstant: 46)
+        ]
+        
         anotherEnterStack.addArrangedSubview(googleButton)
+        NSLayoutConstraint.activate(googleButtonConstraints)
     }
     
     private func setUpAppleButton() {
@@ -150,7 +156,13 @@ class RegisterViewController: UIViewController {
         appleButton.setImage(UIImage(named: "apple"), for: .normal)
         appleButton.translatesAutoresizingMaskIntoConstraints = false
         
+        let appleButtonConstraints = [
+            appleButton.widthAnchor.constraint(equalToConstant: 46),
+            appleButton.heightAnchor.constraint(equalToConstant: 46)
+        ]
+        
         anotherEnterStack.addArrangedSubview(appleButton)
+        NSLayoutConstraint.activate(appleButtonConstraints)
     }
     
     private func setUpAnotherEnterStack() {
@@ -164,7 +176,7 @@ class RegisterViewController: UIViewController {
         
             anotherEnterStack.topAnchor.constraint(equalTo: anotherEnterlabel.bottomAnchor, constant: 20),
             anotherEnterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            anotherEnterStack.widthAnchor.constraint(equalToConstant: 96)
+            anotherEnterStack.widthAnchor.constraint(equalToConstant: 112)
         ]
         
         view.addSubview(anotherEnterStack)
@@ -174,11 +186,11 @@ class RegisterViewController: UIViewController {
     private func setUpHasAccountLabel() {
         
         hasAccountLabel.text = "Уже есть аккаунт?"
-        hasAccountLabel.textColor = .gray
-        hasAccountLabel.font = UIFont(name: "Inter-Regular", size: 14)
+        hasAccountLabel.textColor = UIColor(named: "primaryGray")
+        hasAccountLabel.font = UIFont(name: "SFProRounded-Regular", size: 14)
         hasAccountLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        enterStack.addArrangedSubview(hasAccountLabel)
+        existingEnterStack.addArrangedSubview(hasAccountLabel)
     }
     
     private func setUpExistingEnterButton() {
@@ -186,36 +198,36 @@ class RegisterViewController: UIViewController {
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         
         existingEnterButton.setAttributedTitle(NSAttributedString(string: "Войти", attributes: underlineAttribute), for: .normal)
-        existingEnterButton.setTitleColor(.black, for: .normal)
-        existingEnterButton.backgroundColor = .none
-        existingEnterButton.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 14)
+        existingEnterButton.setTitleColor(UIColor(named: "primaryBlack"), for: .normal)
+        existingEnterButton.backgroundColor = .clear
+        existingEnterButton.titleLabel?.font = UIFont(name: "SFProRounded-Semibold", size: 14)
         existingEnterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let enterButtonConstraints = [
         
-            existingEnterButton.widthAnchor.constraint(equalToConstant: 44),
-            existingEnterButton.heightAnchor.constraint(equalToConstant: 18)
+            existingEnterButton.widthAnchor.constraint(equalToConstant: 40),
+            existingEnterButton.heightAnchor.constraint(equalToConstant: 17)
         ]
         
-        enterStack.addArrangedSubview(existingEnterButton)
+        existingEnterStack.addArrangedSubview(existingEnterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)
     }
     
-    private func setUpEnterStack() {
+    private func setUpExistingEnterStack() {
         
-        enterStack.axis = .horizontal
-        enterStack.alignment = .center
-        enterStack.distribution = .equalSpacing
-        enterStack.translatesAutoresizingMaskIntoConstraints = false
+        existingEnterStack.axis = .horizontal
+        existingEnterStack.alignment = .center
+        existingEnterStack.distribution = .equalSpacing
+        existingEnterStack.translatesAutoresizingMaskIntoConstraints = false
         
         let anotherEnterStackConstraints = [
         
-            enterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            enterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterStack.widthAnchor.constraint(equalToConstant: 177)
+            existingEnterStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            existingEnterStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            existingEnterStack.widthAnchor.constraint(equalToConstant: 162)
         ]
         
-        view.addSubview(enterStack)
+        view.addSubview(existingEnterStack)
         NSLayoutConstraint.activate(anotherEnterStackConstraints)
     }
 }
