@@ -13,7 +13,7 @@ class AccountCreatedViewController: UIViewController {
     private let image = UIImageView()
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Аккаунт создан") ?? UILabel()
     private let basicLabel = UILabel()
-    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 56) ?? UIButton()
+    private let enterButton = PrimaryButtonK(type: true, title: "Войти", height: 52) ?? UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,6 @@ class AccountCreatedViewController: UIViewController {
         
         let mainTitleConstraints = [
             mainTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            mainTitle.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             mainTitle.bottomAnchor.constraint(equalTo: basicLabel.topAnchor, constant: -17)
         ]
         
@@ -62,15 +61,14 @@ class AccountCreatedViewController: UIViewController {
     
     private func setUpBasicLabel() {
         
-        basicLabel.text = "Теперь вы можете пользоваться\nнашим приложением! :)"
-        basicLabel.textColor = .gray
+        basicLabel.text = "Теперь вы можете пользоваться\nнашим приложением!"
+        basicLabel.textColor = UIColor(named: "primaryGray")
         basicLabel.textAlignment = .center
         basicLabel.numberOfLines = 2
-        basicLabel.font = UIFont(name: "Inter-Regular", size: 16)
+        basicLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let basicLabelConstraints = [
-//            basicLabel.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 17),
             basicLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             basicLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ]

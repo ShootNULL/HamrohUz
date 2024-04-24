@@ -25,9 +25,9 @@ final class PrimaryTitleK: UILabel {
     
     private func setUp() {
         self.text = title
-        self.textColor = .black
+        self.textColor = UIColor(named: "primaryBlack")
         self.numberOfLines = numberLines
-        self.font = UIFont(name: "Inter-Bold", size: 32)
+        self.font = UIFont(name: "SFProRounded-Bold", size: 32)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -56,14 +56,16 @@ final class PrimaryButtonK: UIButton {
     private func setUp() {
         self.setTitle(title, for: .normal)
         self.layer.cornerRadius = 12
-        self.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 16)
+        self.titleLabel?.font = UIFont(name: "SFProRounded-Semibold", size: 14)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = type ? .black : .white
-        self.setTitleColor(type ? .white : .black, for: .normal)
+        self.backgroundColor = type ? UIColor(named: "primaryBlack") : UIColor(named: "primaryWhite")
+        self.setTitleColor(type ? UIColor(named: "primaryWhite") : UIColor(named: "primaryBlack"), for: .normal)
         
         if !type {
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor(named: "buttonBorderColor")!.cgColor
+            self.layer.shadowOffset = CGSize(width: 0, height: 0)
+            self.layer.shadowColor = UIColor.black.cgColor
+            self.layer.shadowRadius = 12
+            self.layer.shadowOpacity = 0.12
         }
         
         let primaryButtonConstraints = [
@@ -95,15 +97,15 @@ final class PrimaryTextFieldK: UITextField {
     
     private func setUp() {
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.gray,
-            NSAttributedString.Key.font: UIFont(name: "Inter-Regular", size: 16)!
+            NSAttributedString.Key.foregroundColor: UIColor(named: "primaryGray")!,
+            NSAttributedString.Key.font: UIFont(name: "SFProRounded-Regular", size: 14)!
         ]
         
         self.attributedPlaceholder = NSAttributedString(string: title, attributes: attributes)
-        self.textColor = .black
-        self.font = UIFont(name: "Inter-Regular", size: 16)
+        self.textColor = UIColor(named: "primaryBlack")
+        self.font = UIFont(name: "SFProRounded-Regular", size: 14)
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor(named: "textFieldBorderColor")!.cgColor
+        self.layer.borderColor = UIColor(named: "primaryLightGray")!.cgColor
         self.layer.cornerRadius = 12
         self.leftView = UIView(frame: CGRectMake(0, 0, 16, self.frame.height))
         self.leftViewMode = UITextField.ViewMode.always

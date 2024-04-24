@@ -20,14 +20,14 @@
 		D00A54962BC9701A00F686F5 /* LogInPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54952BC9701A00F686F5 /* LogInPasswordViewPresenter.swift */; };
 		D00A54992BCA5DEE00F686F5 /* GetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54982BCA5DEE00F686F5 /* GetCodeViewController.swift */; };
 		D00A549B2BCA5E1800F686F5 /* GetCodeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A549A2BCA5E1800F686F5 /* GetCodeViewPresenter.swift */; };
-		D00A549E2BCAAD1F00F686F5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00A549D2BCAAD1F00F686F5 /* Inter-Regular.ttf */; };
-		D00A54A02BCAAECB00F686F5 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00A549F2BCAAECA00F686F5 /* Inter-Medium.ttf */; };
-		D00A54A22BCAAF1500F686F5 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00A54A12BCAAF1500F686F5 /* Inter-Bold.ttf */; };
-		D00A54A42BCAAF9E00F686F5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00A54A32BCAAF9E00F686F5 /* Inter-SemiBold.ttf */; };
 		D00A54A72BCECFEF00F686F5 /* AccountCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54A62BCECFEF00F686F5 /* AccountCreatedViewController.swift */; };
 		D00A54A92BCED02400F686F5 /* AccountCreatedViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54A82BCED02400F686F5 /* AccountCreatedViewPresenter.swift */; };
 		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
 		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
+		D03571DC2BD91C0600E5730F /* SFProRounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */; };
+		D03571DD2BD91C0600E5730F /* SFProRounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */; };
+		D03571DE2BD91C0600E5730F /* SFProRounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */; };
+		D03571DF2BD91C0600E5730F /* SFProRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */; };
 		D0AB021E2BC53B1D00540225 /* RegistrationPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */; };
 		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 		FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */; };
@@ -51,14 +51,14 @@
 		D00A54952BC9701A00F686F5 /* LogInPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordViewPresenter.swift; sourceTree = "<group>"; };
 		D00A54982BCA5DEE00F686F5 /* GetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCodeViewController.swift; sourceTree = "<group>"; };
 		D00A549A2BCA5E1800F686F5 /* GetCodeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCodeViewPresenter.swift; sourceTree = "<group>"; };
-		D00A549D2BCAAD1F00F686F5 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
-		D00A549F2BCAAECA00F686F5 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../../../Downloads/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; };
-		D00A54A12BCAAF1500F686F5 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../../../Downloads/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; };
-		D00A54A32BCAAF9E00F686F5 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../../../Downloads/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		D00A54A62BCECFEF00F686F5 /* AccountCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewController.swift; sourceTree = "<group>"; };
 		D00A54A82BCED02400F686F5 /* AccountCreatedViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewPresenter.swift; sourceTree = "<group>"; };
 		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
+		D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Bold.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Bold.otf"; sourceTree = "<group>"; };
+		D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Regular.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Regular.otf"; sourceTree = "<group>"; };
+		D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Semibold.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Semibold.otf"; sourceTree = "<group>"; };
+		D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Medium.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Medium.otf"; sourceTree = "<group>"; };
 		D0AB021D2BC53B1D00540225 /* RegistrationPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPasswordViewController.swift; sourceTree = "<group>"; };
 		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 		E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.release.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,13 +116,13 @@
 		5CE224C42B1DEDD500B7A4D2 /* Enter */ = {
 			isa = PBXGroup;
 			children = (
-				D00A54A52BCECF9D00F686F5 /* AccountCreated  */,
-				D00A54972BCA5DC800F686F5 /* GetCode */,
-				D00A54922BC96FE100F686F5 /* LogInPassword */,
-				D00A548B2BC9613300F686F5 /* LogIn */,
-				D0AB021C2BC53AF600540225 /* RegistrationPassword */,
-				D030A5072B20A9020064F2FF /* Registration */,
 				5CE224C52B1DEDE800B7A4D2 /* EnterScreen */,
+				D030A5072B20A9020064F2FF /* Registration */,
+				D0AB021C2BC53AF600540225 /* RegistrationPassword */,
+				D00A548B2BC9613300F686F5 /* LogIn */,
+				D00A54922BC96FE100F686F5 /* LogInPassword */,
+				D00A54972BCA5DC800F686F5 /* GetCode */,
+				D00A54A52BCECF9D00F686F5 /* AccountCreated  */,
 			);
 			path = Enter;
 			sourceTree = "<group>";
@@ -195,10 +195,10 @@
 		D00A549C2BCAAD1100F686F5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D00A54A32BCAAF9E00F686F5 /* Inter-SemiBold.ttf */,
-				D00A54A12BCAAF1500F686F5 /* Inter-Bold.ttf */,
-				D00A549F2BCAAECA00F686F5 /* Inter-Medium.ttf */,
-				D00A549D2BCAAD1F00F686F5 /* Inter-Regular.ttf */,
+				D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */,
+				D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */,
+				D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */,
+				D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -297,12 +297,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D00A54A42BCAAF9E00F686F5 /* Inter-SemiBold.ttf in Resources */,
-				D00A54A02BCAAECB00F686F5 /* Inter-Medium.ttf in Resources */,
-				D00A54A22BCAAF1500F686F5 /* Inter-Bold.ttf in Resources */,
+				D03571DC2BD91C0600E5730F /* SFProRounded-Bold.otf in Resources */,
+				D03571DD2BD91C0600E5730F /* SFProRounded-Regular.otf in Resources */,
 				5CE224BD2B1DED5B00B7A4D2 /* LaunchScreen.storyboard in Resources */,
-				D00A549E2BCAAD1F00F686F5 /* Inter-Regular.ttf in Resources */,
+				D03571DF2BD91C0600E5730F /* SFProRounded-Medium.otf in Resources */,
 				5CE224BA2B1DED5B00B7A4D2 /* Assets.xcassets in Resources */,
+				D03571DE2BD91C0600E5730F /* SFProRounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +504,7 @@
 				INFOPLIST_FILE = Hamroh/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hamroh;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,7 +533,7 @@
 				INFOPLIST_FILE = Hamroh/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hamroh;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -36,8 +36,7 @@ class GetCodeViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 75),
-            mainTitle.widthAnchor.constraint(equalToConstant: 267)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 56)
         ]
         
         view.addSubview(mainTitle)
@@ -46,10 +45,10 @@ class GetCodeViewController: UIViewController {
     
     private func setUpBasicLabel() {
         
-        basicLabel.text = "Мы отправили код на "
-        basicLabel.textColor = .gray
+        basicLabel.text = "Мы отправили код на"
+        basicLabel.textColor = UIColor(named: "primaryGray")
         basicLabel.numberOfLines = 1
-        basicLabel.font = UIFont(name: "Inter-Regular", size: 16)
+        basicLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
         mailStack.addArrangedSubview(basicLabel)
@@ -58,9 +57,9 @@ class GetCodeViewController: UIViewController {
     private func setUpMail() {
         
         exampleMail.text = "example@mail.ru"
-        exampleMail.textColor = .black
+        exampleMail.textColor = UIColor(named: "primaryBlack")
         exampleMail.numberOfLines = 1
-        exampleMail.font = UIFont(name: "Inter-Medium", size: 16)
+        exampleMail.font = UIFont(name: "SFProRounded-Medium", size: 16)
         exampleMail.translatesAutoresizingMaskIntoConstraints = false
             
         mailStack.addArrangedSubview(exampleMail)
@@ -74,9 +73,9 @@ class GetCodeViewController: UIViewController {
         mailStack.translatesAutoresizingMaskIntoConstraints = false
         
         let mailStackConstraints = [
-            mailStack.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 18),
+            mailStack.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 16),
             mailStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            mailStack.widthAnchor.constraint(equalToConstant: 305)
+            mailStack.widthAnchor.constraint(equalToConstant: 274)
         ]
         
         view.addSubview(mailStack)
