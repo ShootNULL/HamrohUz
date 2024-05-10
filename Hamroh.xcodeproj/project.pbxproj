@@ -163,7 +163,7 @@
 		5CE224CE2B1DF00B00B7A4D2 /* Beauty */ = {
 			isa = PBXGroup;
 			children = (
-				D00A549C2BCAAD1100F686F5 /* Fonts */,
+				D00A549C2BCAAD1100F686F5 /* FontsMain */,
 				5CE224BB2B1DED5B00B7A4D2 /* LaunchScreen.storyboard */,
 				5CE224B92B1DED5B00B7A4D2 /* Assets.xcassets */,
 				5CE224CF2B1DF01800B7A4D2 /* Kit.swift */,
@@ -207,7 +207,7 @@
 			path = GetCode;
 			sourceTree = "<group>";
 		};
-		D00A549C2BCAAD1100F686F5 /* Fonts */ = {
+		D00A549C2BCAAD1100F686F5 /* FontsMain */ = {
 			isa = PBXGroup;
 			children = (
 				D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */,
@@ -215,7 +215,7 @@
 				D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */,
 				D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */,
 			);
-			path = Fonts;
+			path = FontsMain;
 			sourceTree = "<group>";
 		};
 		D00A54A52BCECF9D00F686F5 /* AccountCreated  */ = {
