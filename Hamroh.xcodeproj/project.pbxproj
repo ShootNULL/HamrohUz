@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0BCD8F2BEFE84300AEF7D6 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BCD8E2BEFE84300AEF7D6 /* Auth.swift */; };
+		5C0BCD912BEFE95C00AEF7D6 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0BCD902BEFE95C00AEF7D6 /* Extentions.swift */; };
 		5CE224B12B1DED5A00B7A4D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224B02B1DED5A00B7A4D2 /* AppDelegate.swift */; };
 		5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE224B22B1DED5A00B7A4D2 /* SceneDelegate.swift */; };
 		5CE224BA2B1DED5B00B7A4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE224B92B1DED5B00B7A4D2 /* Assets.xcassets */; };
@@ -24,10 +26,6 @@
 		D00A54A92BCED02400F686F5 /* AccountCreatedViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A54A82BCED02400F686F5 /* AccountCreatedViewPresenter.swift */; };
 		D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A5082B20A91F0064F2FF /* RegisterViewController.swift */; };
 		D030A50B2B20A9350064F2FF /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */; };
-		D03571DC2BD91C0600E5730F /* SFProRounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */; };
-		D03571DD2BD91C0600E5730F /* SFProRounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */; };
-		D03571DE2BD91C0600E5730F /* SFProRounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */; };
-		D03571DF2BD91C0600E5730F /* SFProRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */; };
 		D03571E22BD9578E00E5730F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E12BD9578E00E5730F /* ForgotPasswordViewController.swift */; };
 		D03571E42BD9579F00E5730F /* ForgotPasswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */; };
 		D03571E72BD961AA00E5730F /* EnterNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03571E62BD961AA00E5730F /* EnterNewPasswordViewController.swift */; };
@@ -40,6 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0BCD8E2BEFE84300AEF7D6 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		5C0BCD902BEFE95C00AEF7D6 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		5C5DFBA12BEE58E900B715CA /* SFProRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProRounded-Medium.otf"; sourceTree = "<group>"; };
+		5C5DFBA22BEE58E900B715CA /* SFProRounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProRounded-Regular.otf"; sourceTree = "<group>"; };
+		5C5DFBA32BEE58E900B715CA /* SFProRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProRounded-Bold.otf"; sourceTree = "<group>"; };
+		5C5DFBA42BEE58E900B715CA /* SFProRounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProRounded-Semibold.otf"; sourceTree = "<group>"; };
 		5CE224AD2B1DED5A00B7A4D2 /* Hamroh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamroh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE224B02B1DED5A00B7A4D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE224B22B1DED5A00B7A4D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,10 +65,6 @@
 		D00A54A82BCED02400F686F5 /* AccountCreatedViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewPresenter.swift; sourceTree = "<group>"; };
 		D030A5082B20A91F0064F2FF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D030A50A2B20A9350064F2FF /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
-		D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Bold.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Bold.otf"; sourceTree = "<group>"; };
-		D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Regular.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Regular.otf"; sourceTree = "<group>"; };
-		D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Semibold.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Semibold.otf"; sourceTree = "<group>"; };
-		D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProRounded-Medium.otf"; path = "../../../../../../../Library/Mobile Documents/.Trash/SFProRounded-Medium.otf"; sourceTree = "<group>"; };
 		D03571E12BD9578E00E5730F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D03571E32BD9579F00E5730F /* ForgotPasswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewPresenter.swift; sourceTree = "<group>"; };
 		D03571E62BD961AA00E5730F /* EnterNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +156,8 @@
 			children = (
 				5CE224B22B1DED5A00B7A4D2 /* SceneDelegate.swift */,
 				5CE224B02B1DED5A00B7A4D2 /* AppDelegate.swift */,
+				5C0BCD8E2BEFE84300AEF7D6 /* Auth.swift */,
+				5C0BCD902BEFE95C00AEF7D6 /* Extentions.swift */,
 			);
 			path = LowLevel;
 			sourceTree = "<group>";
@@ -163,7 +165,7 @@
 		5CE224CE2B1DF00B00B7A4D2 /* Beauty */ = {
 			isa = PBXGroup;
 			children = (
-				D00A549C2BCAAD1100F686F5 /* FontsMain */,
+				D00A549C2BCAAD1100F686F5 /* Fonts */,
 				5CE224BB2B1DED5B00B7A4D2 /* LaunchScreen.storyboard */,
 				5CE224B92B1DED5B00B7A4D2 /* Assets.xcassets */,
 				5CE224CF2B1DF01800B7A4D2 /* Kit.swift */,
@@ -207,15 +209,15 @@
 			path = GetCode;
 			sourceTree = "<group>";
 		};
-		D00A549C2BCAAD1100F686F5 /* FontsMain */ = {
+		D00A549C2BCAAD1100F686F5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D03571D82BD91C0600E5730F /* SFProRounded-Bold.otf */,
-				D03571DB2BD91C0600E5730F /* SFProRounded-Medium.otf */,
-				D03571D92BD91C0600E5730F /* SFProRounded-Regular.otf */,
-				D03571DA2BD91C0600E5730F /* SFProRounded-Semibold.otf */,
+				5C5DFBA32BEE58E900B715CA /* SFProRounded-Bold.otf */,
+				5C5DFBA12BEE58E900B715CA /* SFProRounded-Medium.otf */,
+				5C5DFBA22BEE58E900B715CA /* SFProRounded-Regular.otf */,
+				5C5DFBA42BEE58E900B715CA /* SFProRounded-Semibold.otf */,
 			);
-			path = FontsMain;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D00A54A52BCECF9D00F686F5 /* AccountCreated  */ = {
@@ -339,12 +341,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03571DC2BD91C0600E5730F /* SFProRounded-Bold.otf in Resources */,
-				D03571DD2BD91C0600E5730F /* SFProRounded-Regular.otf in Resources */,
 				5CE224BD2B1DED5B00B7A4D2 /* LaunchScreen.storyboard in Resources */,
-				D03571DF2BD91C0600E5730F /* SFProRounded-Medium.otf in Resources */,
 				5CE224BA2B1DED5B00B7A4D2 /* Assets.xcassets in Resources */,
-				D03571DE2BD91C0600E5730F /* SFProRounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +382,7 @@
 				D00A549B2BCA5E1800F686F5 /* GetCodeViewPresenter.swift in Sources */,
 				D00A54962BC9701A00F686F5 /* LogInPasswordViewPresenter.swift in Sources */,
 				D03571EC2BD96A6100E5730F /* PasswordChangedViewController.swift in Sources */,
+				5C0BCD8F2BEFE84300AEF7D6 /* Auth.swift in Sources */,
 				D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */,
 				D03571E92BD961C200E5730F /* EnterNewPasswordViewPresenter.swift in Sources */,
 				D00A54942BC96FFB00F686F5 /* LogInPasswordViewController.swift in Sources */,
@@ -401,6 +400,7 @@
 				D030A5092B20A91F0064F2FF /* RegisterViewController.swift in Sources */,
 				D03571E22BD9578E00E5730F /* ForgotPasswordViewController.swift in Sources */,
 				5CE224B32B1DED5A00B7A4D2 /* SceneDelegate.swift in Sources */,
+				5C0BCD912BEFE95C00AEF7D6 /* Extentions.swift in Sources */,
 				D00A548D2BC9617500F686F5 /* LogInViewController.swift in Sources */,
 				5CE224CC2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift in Sources */,
 			);

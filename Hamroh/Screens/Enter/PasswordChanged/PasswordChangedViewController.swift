@@ -28,6 +28,15 @@ class PasswordChangedViewController: UIViewController {
         setUpTitle()
         setUpImage()
         setUpEnterButton()
+        
+        let auth = Auth()
+        print("huy")
+        auth.auth(email: "string", password: "string")
+        print(auth.getSecret(key: "email"))
+        print(auth.getSecret(key: "contactNumber"))
+        print(auth.getSecret(key: "name"))
+        
+        
     }
     
     private func setUpImage() {
