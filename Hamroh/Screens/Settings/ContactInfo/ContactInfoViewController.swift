@@ -10,6 +10,7 @@ import UIKit
 
 class ContactInfoViewController: UIViewController {
     
+    private var checkActive = false
     private let profileCard = PrimaryProfileCardK(photo: "photo", name: "Николай Жидков", shield: "safeShield", sub: "Надежный аккаунт") ?? UIView()
     private let mainView = UIView()
     private let name = PrimaryTitleK(numberLines: 1, title: "Имя") ?? UILabel()
@@ -33,6 +34,7 @@ class ContactInfoViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "Base5")
         
+        setUpNavigation()
         setUpProfileCard()
         setUpMainView()
         setUpNameTitle()
@@ -45,6 +47,23 @@ class ContactInfoViewController: UIViewController {
         setUpNumberTextField()
         setUpCheckButton()
         setUpPrivacyLabel()
+    }
+    
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Контактная информация"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func setUpProfileCard() {
@@ -191,6 +210,7 @@ class ContactInfoViewController: UIViewController {
     private func setUpCheckButton() {
         
         checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        checkButton.addTarget(self, action: #selector(changeCheck), for: .touchUpInside)
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         
         let checkButtonConstraints = [
@@ -203,6 +223,16 @@ class ContactInfoViewController: UIViewController {
         
         mainView.addSubview(checkButton)
         NSLayoutConstraint.activate(checkButtonConstraints)
+    }
+    
+    @objc private func changeCheck() {
+        
+        if checkActive {
+            checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        } else {
+            checkButton.setImage(UIImage(named: "checkOn"), for: .normal)
+        }
+        checkActive = !checkActive
     }
     
     private func setUpPrivacyLabel() {

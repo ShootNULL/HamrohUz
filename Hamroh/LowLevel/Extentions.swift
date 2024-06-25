@@ -56,12 +56,12 @@ extension UIViewController {
     }
 }
 
-extension UITabBar {
+extension UIViewController {
+    func hideNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
-    override public func sizeThatFits(_ size: CGSize) -> CGSize {
-    super.sizeThatFits(size)
-    var sizeThatFits = super.sizeThatFits(size)
-    sizeThatFits.height = 69 // or whatever height you need
-    return sizeThatFits
-   }
+    func showNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }

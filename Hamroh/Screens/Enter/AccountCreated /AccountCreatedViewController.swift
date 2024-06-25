@@ -26,11 +26,11 @@ class AccountCreatedViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpBasicLabel()
         setUpTitle()
         setUpImage()
         setUpEnterButton()
-        setUpBackArrow()
     }
     
     private func setUpBackArrow() {
@@ -51,6 +51,7 @@ class AccountCreatedViewController: UIViewController {
         image.translatesAutoresizingMaskIntoConstraints = false
         
         let imageConstraints = [
+            
             image.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             image.bottomAnchor.constraint(equalTo: mainTitle.topAnchor, constant: -40),
             image.widthAnchor.constraint(equalToConstant: 90),
@@ -66,6 +67,7 @@ class AccountCreatedViewController: UIViewController {
         mainTitle.textAlignment = .center
         
         let mainTitleConstraints = [
+            
             mainTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mainTitle.bottomAnchor.constraint(equalTo: basicLabel.topAnchor, constant: -16)
         ]
@@ -84,6 +86,7 @@ class AccountCreatedViewController: UIViewController {
         basicLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let basicLabelConstraints = [
+            
             basicLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             basicLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ]
@@ -93,20 +96,21 @@ class AccountCreatedViewController: UIViewController {
     }
     
     private func setUpEnterButton() {
+        
+        enterButton.addTarget(self, action: #selector(goOnMainScreen), for: .touchUpInside)
     
         let enterButtonConstraints = [
+            
             enterButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor, constant: 40),
             enterButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
         ]
-        
-        enterButton.addTarget(self, action: #selector(goOnMainScreen), for: .touchUpInside)
     
         view.addSubview(enterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)
     }
     
     @objc private func goOnMainScreen() {
-        presenter.goNext(vc: TravelerDriverViewController())
+        presenter.goNext(vc: UINavigationController(rootViewController: TabBarController()))
     }
 }

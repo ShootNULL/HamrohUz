@@ -19,19 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-//        let loginViewController = UINavigationController(rootViewController: EnterViewController())
-        let customNavigationController = UINavigationController(rootViewController: TabBarController())
-        let currentViewController = customNavigationController
+        let loginViewController = UINavigationController(rootViewController: EnterViewController())
+//        let mainNavigationController = UINavigationController(rootViewController: TabBarController())
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = currentViewController
+        window?.rootViewController = loginViewController
         window?.makeKeyAndVisible()
         window?.overrideUserInterfaceStyle = .dark
         
     }
-
-
-
 }
 

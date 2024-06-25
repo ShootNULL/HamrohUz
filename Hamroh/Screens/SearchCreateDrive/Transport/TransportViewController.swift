@@ -10,6 +10,9 @@ import UIKit
 
 class TransportViewController: UIViewController {
     
+    private let presenter = TransportViewPresenter()
+    
+    private var checkActive = false
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Транспорт") ?? UILabel()
     private let autoTitle = PrimaryTitleK(numberLines: 1, title: "Автомобиль") ?? UILabel()
     private let autoTextField = PrimaryTextFieldK(title: "", height: 46) ?? UITextField()
@@ -19,17 +22,18 @@ class TransportViewController: UIViewController {
     private let signTextField = PrimaryTextFieldK(title: "", height: 46) ?? UITextField()
     private let checkButton = UIButton()
     private let privacyLabel = UILabel()
-    private let createDriveButton = PrimaryButtonK(type: true, title: "Создать поезду", height: 52) ?? UIButton()
+    private let createDriveButton = PrimaryButtonK(type: true, title: "Создать поездку", height: 52) ?? UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp()
     }
     
     private func setUp() {
-        
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpAutoTitle()
         setUpAutoTextField()
@@ -42,13 +46,24 @@ class TransportViewController: UIViewController {
         setUpCreateDriveButton()
     }
     
+    private func setUpBackArrow() {
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
     
     private func setUpTitle() {
         
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ]
         
         view.addSubview(mainTitle)
@@ -165,7 +180,8 @@ class TransportViewController: UIViewController {
     
     private func setUpCheckButton() {
         
-        checkButton.setImage(UIImage(named: "checkEllipse"), for: .normal)
+        checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        checkButton.addTarget(self, action: #selector(changeCheck), for: .touchUpInside)
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         
         let checkButtonConstraints = [
@@ -178,6 +194,16 @@ class TransportViewController: UIViewController {
         
         view.addSubview(checkButton)
         NSLayoutConstraint.activate(checkButtonConstraints)
+    }
+    
+    @objc private func changeCheck() {
+        
+        if checkActive {
+            checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        } else {
+            checkButton.setImage(UIImage(named: "checkOn"), for: .normal)
+        }
+        checkActive = !checkActive
     }
     
     private func setUpPrivacyLabel() {
@@ -201,6 +227,8 @@ class TransportViewController: UIViewController {
     
     private func setUpCreateDriveButton() {
         
+        createDriveButton.addTarget(self, action: #selector(goOnMyDrivesScreen), for: .touchUpInside)
+        
         let createDriveButtonConstraints = [
         
             createDriveButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
@@ -210,6 +238,12 @@ class TransportViewController: UIViewController {
         
         view.addSubview(createDriveButton)
         NSLayoutConstraint.activate(createDriveButtonConstraints)
+    }
+    
+    @objc private func goOnMyDrivesScreen() {
+        
+        self.tabBarController?.selectedIndex = 1
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

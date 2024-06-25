@@ -31,9 +31,9 @@ class ReservationViewController: UIViewController {
     }
     
     private func setUp() {
-        
         view.backgroundColor = .white
         
+        setUpNavigation()
         setUpNameTitle()
         setUpNameTextField()
         setUpSerNameTitle()
@@ -49,13 +49,30 @@ class ReservationViewController: UIViewController {
         setUpConfirmButton()
     }
     
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Забронировать"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setUpNameTitle() {
         
         name.font = UIFont(name: "SFProRounded-Medium", size: 14)
         
         let nameConstraints = [
         
-            name.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            name.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             name.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ]
         
@@ -213,7 +230,6 @@ class ReservationViewController: UIViewController {
             passportTexField.isSecureTextEntry = false
             visibleButton.setTitle("Скрыть", for: .normal)
         } else {
-            
             passportTexField.isSecureTextEntry = true
             visibleButton.setTitle("Показать", for: .normal)
         }
@@ -228,7 +244,6 @@ class ReservationViewController: UIViewController {
         addPassengerButton.titleLabel?.font = UIFont(name: "SFProRounded-Regular", size: 12)
         addPassengerButton.translatesAutoresizingMaskIntoConstraints = false
         
-        
         let addPassengerButtonConstraints = [
             
             addPassengerButton.topAnchor.constraint(equalTo: passportTexField.bottomAnchor, constant: 8),
@@ -241,6 +256,8 @@ class ReservationViewController: UIViewController {
     
     private func setUpConfirmButton() {
         
+        confirmButton.addTarget(self, action: #selector(goOnMyDrivesScreen), for: .touchUpInside)
+        
         let confirmButtonConstraints = [
         
             confirmButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
@@ -250,5 +267,11 @@ class ReservationViewController: UIViewController {
         
         view.addSubview(confirmButton)
         NSLayoutConstraint.activate(confirmButtonConstraints)
+    }
+    
+    @objc private func goOnMyDrivesScreen() {
+        
+        self.tabBarController?.selectedIndex = 1
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

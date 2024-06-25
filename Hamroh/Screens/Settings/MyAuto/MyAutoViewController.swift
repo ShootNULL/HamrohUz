@@ -12,7 +12,7 @@ class MyAutoViewController: UIViewController {
     
     private let profileCard = PrimaryProfileCardK(photo: "photo", name: "Николай Жидков", shield: "safeShield", sub: "Надежный аккаунт") ?? UIView()
     private let carCard = PrimaryPayOrCarCardK(type: false, photo: "WhiteCar", nameTitle: "Skoda Octavia", sub: "A945MO", close: "StarChosen") ?? UIView()
-    private let addCard = PrimaryAddCardK(photo: "CarProfile", nameTitle: "Добавьте автомобиль", sub: "Внесите всю необходимую информацию об автомобиле и заполните документы, чтобы быть водителем", numberOfLines: 3) ?? UIView()
+    private let addCard = PrimaryAddCardK(photo: "CarProfile", nameTitle: "Добавьте автомобиль", nameColor: "primaryBlack", sub: "Внесите всю необходимую информацию об автомобиле и заполните документы, чтобы быть водителем", subColor: "Base30", numberOfLines: 3) ?? UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +23,29 @@ class MyAutoViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = UIColor(named: "Base5")
         
+        setUpNavigation()
         setUpProfileCard()
         setUpCarCard()
         setUpAddCard()
     }
     
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Мои авто"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+
     private func setUpProfileCard() {
         
         let profileConstraints = [
@@ -69,5 +87,4 @@ class MyAutoViewController: UIViewController {
         view.addSubview(addCard)
         NSLayoutConstraint.activate(addCardConstraints)
     }
-    
 }

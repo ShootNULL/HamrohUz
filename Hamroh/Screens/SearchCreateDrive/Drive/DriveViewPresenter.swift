@@ -17,4 +17,9 @@ class DriveViewPresenter: DriveViewProtocol {
     func load() {
         // your code
     }
+    
+    func goNext(vc: UIViewController) {
+        let nav = Navigation()
+        nav.navigateTo(VC: vc, style: .push)
+    }
 }

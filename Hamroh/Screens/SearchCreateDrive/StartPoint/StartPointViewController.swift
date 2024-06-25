@@ -10,6 +10,8 @@ import UIKit
 
 class StartPointViewController: UIViewController {
     
+    private let presenter = StarrPointViewPresenter()
+    
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Начальная точка") ?? UILabel()
     private let fromCard = PrimaryCardFromK(title: "Где заберем пассажиров?", adress: "Введите полный адрес") ?? UIView()
     private let map = UIImageView()
@@ -17,24 +19,37 @@ class StartPointViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp()
     }
     
     private func setUp() {
-        
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpFromCard()
         setUpMap()
         setUpNextButton()
     }
     
+    private func setUpBackArrow() {
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setUpTitle() {
         
         let titleConstraints = [
         
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ]
         
@@ -49,7 +64,7 @@ class StartPointViewController: UIViewController {
             fromCard.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             fromCard.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
             fromCard.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 20),
-            fromCard.heightAnchor.constraint(equalToConstant: 60)
+            fromCard.heightAnchor.constraint(equalToConstant: 42)
         ]
         
         view.addSubview(fromCard)
@@ -75,14 +90,20 @@ class StartPointViewController: UIViewController {
     
     private func setUpNextButton() {
         
+        nextButton.addTarget(self, action: #selector(goOnEndPointScreen), for: .touchUpInside)
+        
         let nextButtonConsteraints = [
             
-            nextButton.leftAnchor.constraint(equalTo: map.leftAnchor, constant: 16),
-            nextButton.rightAnchor.constraint(equalTo: map.rightAnchor, constant: -16),
-            nextButton.bottomAnchor.constraint(equalTo: map.bottomAnchor, constant: -16)
+            nextButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            nextButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ]
         
-        map.addSubview(nextButton)
+        view.addSubview(nextButton)
         NSLayoutConstraint.activate(nextButtonConsteraints)
+    }
+    
+    @objc private func goOnEndPointScreen() {
+        presenter.goNext(vc: EndPointViewController())
     }
 }

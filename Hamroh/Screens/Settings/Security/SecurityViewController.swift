@@ -28,6 +28,7 @@ class SecurityViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "Base5")
         
+        setUpNavigation()
         setUpProfileCard()
         setUpMainView()
         setUpEmailTitle()
@@ -35,6 +36,23 @@ class SecurityViewController: UIViewController {
         setUpPasswordTitle()
         setUpPassportTextField()
         setUpVisibleButton()
+    }
+    
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Безопасность"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func setUpProfileCard() {
@@ -153,10 +171,8 @@ class SecurityViewController: UIViewController {
             passwordTexField.isSecureTextEntry = false
             visibleButton.setTitle("Скрыть", for: .normal)
         } else {
-            
             passwordTexField.isSecureTextEntry = true
             visibleButton.setTitle("Показать", for: .normal)
         }
     }
-    
 }

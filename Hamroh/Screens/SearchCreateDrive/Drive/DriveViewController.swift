@@ -10,6 +10,8 @@ import UIKit
 
 class DriveViewController: UIViewController {
     
+    private let presenter = DriveViewPresenter()
+    
     let timeStartArr = ["07:30", "08:00", "09:00"]
     let timeArr = ["4ч 20м","2ч 40м","3ч 00м"]
     let timeFinishArr = ["11:50", "10:40", "12:00"]
@@ -23,6 +25,7 @@ class DriveViewController: UIViewController {
     let carArr = ["White Skoda Octavia", "Black Toyota RAV-4", "Red Volvo s40"]
     let priceArr = ["800 сум.", "500 руб.", "1350 руб."]
     
+    private var checkActive = false
     private let mainView = UIView()
     private let timeStart = UILabel()
     private let time = UILabel()
@@ -41,7 +44,7 @@ class DriveViewController: UIViewController {
     private let privacyLabel = UILabel()
     private let connectionButton = PrimaryButtonK(type: false, title: "Связаться с водителем", height: 52) ?? UIButton()
     private let reserveButton = PrimaryButtonK(type: true, title: "Забронировать", height: 52) ?? UIButton()
-    private let secureAcc = UIImageView()
+    private let secureAcc = PrimaryAddCardK(photo: "safeShield", nameTitle: "Надежный аккаунт", nameColor: "primaryBlack", sub: "Водитель прошел полную проверку документов и совершил достаточное количество безопасных поездок с хорошими отзывами", subColor: "Base30", numberOfLines: 3) ?? UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +53,9 @@ class DriveViewController: UIViewController {
     }
     
     private func setUp() {
-        
         view.backgroundColor = .white
         
+        setUpNavigation()
         setUpMainView()
         setUpTimeStart()
         setUpTime()
@@ -74,6 +77,24 @@ class DriveViewController: UIViewController {
         setUpSecureAcc()
     }
     
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        
+        self.navigationItem.title = "Поездка"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setUpMainView() {
         
         mainView.backgroundColor = UIColor(named: "Base5")
@@ -83,7 +104,7 @@ class DriveViewController: UIViewController {
         
         let mainViewConstraints = [
             
-            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mainView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             mainView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
             mainView.heightAnchor.constraint(equalToConstant: 370)
@@ -317,6 +338,7 @@ class DriveViewController: UIViewController {
     private func setUpCheckButton() {
         
         checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        checkButton.addTarget(self, action: #selector(changeCheck), for: .touchUpInside)
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         
         let checkButtonConstraints = [
@@ -329,6 +351,16 @@ class DriveViewController: UIViewController {
         
         mainView.addSubview(checkButton)
         NSLayoutConstraint.activate(checkButtonConstraints)
+    }
+    
+    @objc private func changeCheck() {
+        
+        if checkActive {
+            checkButton.setImage(UIImage(named: "check2"), for: .normal)
+        } else {
+            checkButton.setImage(UIImage(named: "checkOn"), for: .normal)
+        }
+        checkActive = !checkActive
     }
     
     private func setUpPrivacyLabel() {
@@ -352,6 +384,8 @@ class DriveViewController: UIViewController {
     
     private func setUpConnectionButton() {
         
+        connectionButton.addTarget(self, action: #selector(goOnMyDrivesScreen), for: .touchUpInside)
+        
         let connectionButtonConstraints = [
         
             connectionButton.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 16),
@@ -363,7 +397,13 @@ class DriveViewController: UIViewController {
         NSLayoutConstraint.activate(connectionButtonConstraints)
     }
     
+    @objc private func goOnMyDrivesScreen() {
+        self.tabBarController?.selectedIndex = 2
+    }
+    
     private func setUpReserveButton() {
+        
+        reserveButton.addTarget(self, action: #selector(goOnReservationScreen), for: .touchUpInside)
         
         let reserveButtonConstraints = [
         
@@ -376,10 +416,13 @@ class DriveViewController: UIViewController {
         NSLayoutConstraint.activate(reserveButtonConstraints)
     }
     
+    @objc private func goOnReservationScreen() {
+        presenter.goNext(vc: ReservationViewController())
+    }
+    
     private func setUpSecureAcc() {
         
-        secureAcc.image = UIImage(named: "secureAcc")
-        secureAcc.translatesAutoresizingMaskIntoConstraints = false
+        secureAcc.backgroundColor = UIColor(named: "Base5")
         
         let secureAccConstraints = [
             

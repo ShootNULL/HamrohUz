@@ -13,7 +13,6 @@ class Navigation {
     func navigateTo(VC: UIViewController, style: styles) {
         
         if style == .push {
-        
             let navigationController = UIApplication.topViewController()?.navigationController
             navigationController?.pushViewController(VC, animated: true)
         }
@@ -34,7 +33,6 @@ class Navigation {
         let navigationController = UIApplication.topViewController()?.navigationController
         navigationController?.popViewController(animated: true)
     }
-    
     
     enum styles: Int {
         typealias RawValue = Int

@@ -10,6 +10,8 @@ import UIKit
 
 class TripDetailsViewController: UIViewController {
     
+    private let presenter = TripDetailsViewPresenter()
+    
     private let mainTitle = PrimaryTitleK(numberLines: 1, title: "Детали поездки") ?? UILabel()
     private let dateTitle = PrimaryTitleK(numberLines: 1, title: "Дата") ?? UILabel()
     private let dateTextField = PrimaryTextFieldK(title: "", height: 46) ?? UITextField()
@@ -26,6 +28,7 @@ class TripDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp()
     }
     
@@ -33,6 +36,7 @@ class TripDetailsViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpDateTitle()
         setUpDateTextField()
@@ -48,12 +52,24 @@ class TripDetailsViewController: UIViewController {
         setUpCommentTextField()
     }
     
+    private func setUpBackArrow() {
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setUpTitle() {
         
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ]
         
         view.addSubview(mainTitle)
@@ -236,7 +252,6 @@ class TripDetailsViewController: UIViewController {
     }
     
     private func setUpCommentTextField() {
-        
 
         commentTextField.textColor = UIColor(named: "primaryGray")
         commentTextField.font = UIFont(name: "SFProRounded-Regular", size: 12)
@@ -263,6 +278,8 @@ class TripDetailsViewController: UIViewController {
     
     private func setUpNextButton() {
         
+        nextButton.addTarget(self, action: #selector(goOnTransportScreen), for: .touchUpInside)
+        
         let nextButtonConstraints = [
         
             nextButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
@@ -272,6 +289,10 @@ class TripDetailsViewController: UIViewController {
         
         view.addSubview(nextButton)
         NSLayoutConstraint.activate(nextButtonConstraints)
+    }
+    
+    @objc private func goOnTransportScreen() {
+        presenter.goNext(vc: TransportViewController())
     }
 }
 

@@ -44,7 +44,7 @@ class EnterViewController: UIViewController {
         let logoConstraints = [
         
             logo.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             logo.widthAnchor.constraint(equalToConstant: 100),
             logo.heightAnchor.constraint(equalToConstant: 100)
         ]
@@ -88,6 +88,8 @@ class EnterViewController: UIViewController {
     
     private func setUpEnterButton() {
         
+        enterButton.addTarget(self, action: #selector(goOnLogInScreen), for: .touchUpInside)
+        
         let enterButtonConstraints = [
         
             enterButton.topAnchor.constraint(equalTo: basicLabel.bottomAnchor, constant: 40),
@@ -95,13 +97,17 @@ class EnterViewController: UIViewController {
             enterButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
         ]
         
-        enterButton.addTarget(self, action: #selector(goOnLogInScreen), for: .touchUpInside)
-        
         view.addSubview(enterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)
     }
     
+    @objc private func goOnLogInScreen() {
+        presenter.goNext(vc: LogInViewController())
+    }
+    
     private func setUpRegisterButton() {
+        
+        registerButton.addTarget(self, action: #selector(goOnRegisterScreen), for: .touchUpInside)
         
         let registerButtonConstraints = [
         
@@ -110,11 +116,12 @@ class EnterViewController: UIViewController {
             registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
         ]
         
-        registerButton.addTarget(self, action: #selector(goOnRegisterScreen), for: .touchUpInside)
-        
         view.addSubview(registerButton)
         NSLayoutConstraint.activate(registerButtonConstraints)
-        
+    }
+    
+    @objc private func goOnRegisterScreen() {
+        presenter.goNext(vc: RegisterViewController())
     }
     
     private func setUpMainImg() {
@@ -132,13 +139,5 @@ class EnterViewController: UIViewController {
         
         view.addSubview(mainImg)
         NSLayoutConstraint.activate(mainImgConstraints)
-    }
-    
-    @objc private func goOnLogInScreen() {
-        presenter.goNext(vc: LogInViewController())
-    }
-    
-    @objc private func goOnRegisterScreen() {
-        presenter.goNext(vc: RegisterViewController())
     }
 }

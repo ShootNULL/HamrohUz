@@ -10,12 +10,12 @@ import UIKit
 
 class SearchDriveViewController: UIViewController {
     
+    private let presenter = SearchDriveViewPresenter()
+    
     private enum Constant {
         enum Collection {
-            static let cellHeight = 150.0
-            static let cellWidth = 300
             static let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            static let lineSpacing = 20.0
+            static let lineSpacing = 16.0
             static let interitemSpacing = 1.0
         }
     }
@@ -43,20 +43,38 @@ class SearchDriveViewController: UIViewController {
     }
     
     private func setUp() {
-        
         view.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        setUpNavigation()
         setUpTitle()
         setUpCollection()
+    }
+    
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        
+        self.navigationItem.title = "Все поездки"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func setUpTitle() {
         
         let mainTitleConstraints = [
         
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ]
         
@@ -77,7 +95,7 @@ class SearchDriveViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 20),
             collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
         ]
         
         view.addSubview(collectionView)
@@ -99,12 +117,7 @@ extension SearchDriveViewController: UICollectionViewDataSource {
                 withReuseIdentifier: SearchDriveCollectionCell.identifier,
                 for: indexPath
             ) as? SearchDriveCollectionCell else { return UICollectionViewCell() }
-//
-//        if indexPath.item % 4 == 0 || indexPath.item % 4 == 3 {
-//            cell.configure(color: colors[0], title: titles[indexPath.item], img: images[indexPath.item], label: subTitles[indexPath.item])
-//        } else {
-//            cell.configure(color: colors[1], title: titles[indexPath.item], img: images[indexPath.item], label: subTitles[indexPath.item])
-//        }
+
         cell.configure(timeStart: self.timeStart[indexPath.item], time: self.time[indexPath.item], timeFinish: self.timeFinish[indexPath.item], fromCity: self.fromCity[indexPath.item], fromStreet: self.fromStreet[indexPath.item], toCity: self.toCity[indexPath.item], toStreet: self.toStreet[indexPath.item], people: self.people[indexPath.item], photo: self.photo[indexPath.item], name: self.name[indexPath.item], car: self.car[indexPath.item], price: self.price[indexPath.item])
             return cell
     }
@@ -115,7 +128,7 @@ extension SearchDriveViewController: UICollectionViewDataSource {
 extension SearchDriveViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.navigationController?.pushViewController(SoonViewController(), animated: true)
+        presenter.goNext(vc: DriveViewController())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

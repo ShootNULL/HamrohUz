@@ -14,7 +14,6 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         setUp()
-        setTabBarAppearance()
     }
     
     private func setUp() {
@@ -24,18 +23,15 @@ final class TabBarController: UITabBarController {
         tabBar.layer.shadowRadius = 12
         tabBar.layer.shadowOpacity = 0.12
         
-        
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .black
         tabBar.isTranslucent = false
         
-       let login = UINavigationController(rootViewController: EnterViewController())
-        
-        let travelerDriverViewController = TravelerDriverViewController()
-        let myDrivesViewController = MyDrivesViewController()
-        let messagesViewController = MessagesViewController()
-        let profileViewController = ProfileViewController()
+        let travelerDriverViewController = UINavigationController(rootViewController: TravelerDriverViewController())
+        let myDrivesViewController = UINavigationController(rootViewController: MyDrivesViewController())
+        let messagesViewController = UINavigationController(rootViewController: MessagesViewController())
+        let profileViewController = UINavigationController(rootViewController: ProfileViewController())
 
         travelerDriverViewController.tabBarItem = .init(
             title: "",
@@ -62,17 +58,6 @@ final class TabBarController: UITabBarController {
         )
 
         setViewControllers([travelerDriverViewController, myDrivesViewController, messagesViewController, profileViewController], animated: true)
-    }
-    
-    private func setTabBarAppearance() {
-        
-        let roundLayer = CAShapeLayer()
-        
-        let bezierPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: tabBar.bounds.width, height: 619), cornerRadius: 0)
-        roundLayer.path = bezierPath.cgPath
-        tabBar.layer.insertSublayer (roundLayer, at: 0)
-        
-        roundLayer.fillColor = UIColor.white.cgColor
     }
 }
 

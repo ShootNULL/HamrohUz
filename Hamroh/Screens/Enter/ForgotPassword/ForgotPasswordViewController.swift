@@ -25,10 +25,10 @@ class ForgotPasswordViewController: UIViewController {
     func setUp() {
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpMainTitle()
         setUpMailTextField()
         setUpEnterButton()
-        setUpBackArrow()
     }
     
     private func setUpBackArrow() {
@@ -46,7 +46,8 @@ class ForgotPasswordViewController: UIViewController {
     private func setUpMainTitle() {
         
         let mainTitleConstraints = [
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
         ]
         
@@ -69,14 +70,14 @@ class ForgotPasswordViewController: UIViewController {
     
     private func setUpEnterButton() {
         
+        enterButton.addTarget(self, action: #selector(goOnEnterNewPasswordScreen), for: .touchUpInside)
+        
         let enterButtonConstraints = [
             
             enterButton.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 20),
             enterButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
         ]
-        
-        enterButton.addTarget(self, action: #selector(goOnEnterNewPasswordScreen), for: .touchUpInside)
         
         view.addSubview(enterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)

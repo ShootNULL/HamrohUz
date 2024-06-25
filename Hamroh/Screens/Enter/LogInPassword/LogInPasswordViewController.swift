@@ -33,6 +33,7 @@ class LogInPasswordViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpTextField()
         setUpForgotPasswordButton()
@@ -44,7 +45,6 @@ class LogInPasswordViewController: UIViewController {
         setUpHasAccountLabel()
         setUpRegistrationButton()
         setUpRegistrationStack()
-        setUpBackArrow()
     }
     
     private func setUpBackArrow() {
@@ -64,13 +64,12 @@ class LogInPasswordViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ]
         
         view.addSubview(mainTitle)
         NSLayoutConstraint.activate(mainTitleConstraints)
     }
-    
     
     private func setUpTextField() {
         
@@ -91,6 +90,7 @@ class LogInPasswordViewController: UIViewController {
         forgotPasswordButton.setTitleColor(UIColor(named: "primaryBlack"), for: .normal)
         forgotPasswordButton.backgroundColor = .clear
         forgotPasswordButton.titleLabel?.font = UIFont(name: "SFProRounded-Regular", size: 12)
+        forgotPasswordButton.addTarget(self, action: #selector(goOnForgotPasswordScreen), for: .touchUpInside)
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         
         let forgotPasswordButtonConstraints = [
@@ -100,13 +100,17 @@ class LogInPasswordViewController: UIViewController {
             forgotPasswordButton.heightAnchor.constraint(equalToConstant: 14)
         ]
         
-        forgotPasswordButton.addTarget(self, action: #selector(goOnForgotPasswordScreen), for: .touchUpInside)
-        
         view.addSubview(forgotPasswordButton)
         NSLayoutConstraint.activate(forgotPasswordButtonConstraints)
     }
     
+    @objc private func goOnForgotPasswordScreen() {
+        presenter.goNextPush(vc: ForgotPasswordViewController())
+    }
+    
     private func setUpEnterButton() {
+        
+        enterButton.addTarget(self, action: #selector(goOnMainScreen), for: .touchUpInside)
         
         let createButtonConstraints = [
         
@@ -115,10 +119,12 @@ class LogInPasswordViewController: UIViewController {
             enterButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
         ]
         
-        enterButton.addTarget(self, action: #selector(goOnMainScreen), for: .touchUpInside)
-        
         view.addSubview(enterButton)
         NSLayoutConstraint.activate(createButtonConstraints)
+    }
+    
+    @objc private func goOnMainScreen() {
+        presenter.goNextFullScreen(vc: UINavigationController(rootViewController: TabBarController()))
     }
     
     private func setUpAnotherEnterLabel() {
@@ -141,9 +147,11 @@ class LogInPasswordViewController: UIViewController {
     private func setUpGoogleButton() {
         
         googleButton.setImage(UIImage(named: "google"), for: .normal)
+        googleButton.addTarget(self, action: #selector(enterGoogle), for: .touchUpInside)
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let googleButtonConstraints = [
+            
             googleButton.widthAnchor.constraint(equalToConstant: 46),
             googleButton.heightAnchor.constraint(equalToConstant: 46)
         ]
@@ -152,18 +160,28 @@ class LogInPasswordViewController: UIViewController {
         NSLayoutConstraint.activate(googleButtonConstraints)
     }
     
+    @objc private func enterGoogle() {
+        alert(message: "Попробуйте позже", title: "Ошибка!")
+    }
+    
     private func setUpAppleButton() {
         
         appleButton.setImage(UIImage(named: "apple"), for: .normal)
+        appleButton.addTarget(self, action: #selector(enterApple), for: .touchUpInside)
         appleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let appleButtonConstraints = [
+            
             appleButton.widthAnchor.constraint(equalToConstant: 46),
             appleButton.heightAnchor.constraint(equalToConstant: 46)
         ]
         
         anotherEnterStack.addArrangedSubview(appleButton)
         NSLayoutConstraint.activate(appleButtonConstraints)
+    }
+    
+    @objc private func enterApple() {
+        alert(message: "Попробуйте позже", title: "Ошибка!")
     }
     
     private func setUpAnotherEnterStack() {
@@ -202,6 +220,7 @@ class LogInPasswordViewController: UIViewController {
         registrationButton.setTitleColor(UIColor(named: "primaryBlack"), for: .normal)
         registrationButton.backgroundColor = .clear
         registrationButton.titleLabel?.font = UIFont(name: "SFProRounded-SemiBold", size: 14)
+        registrationButton.addTarget(self, action: #selector(goOnRegisterScreen), for: .touchUpInside)
         registrationButton.translatesAutoresizingMaskIntoConstraints = false
         
         let registrationButtonConstraints = [
@@ -210,10 +229,12 @@ class LogInPasswordViewController: UIViewController {
             registrationButton.heightAnchor.constraint(equalToConstant: 17)
         ]
         
-        registrationButton.addTarget(self, action: #selector(goOnRegisterScreen), for: .touchUpInside)
-        
         registrationStack.addArrangedSubview(registrationButton)
         NSLayoutConstraint.activate(registrationButtonConstraints)
+    }
+    
+    @objc private func goOnRegisterScreen() {
+        presenter.goNextPush(vc: RegisterViewController())
     }
     
     private func setUpRegistrationStack() {
@@ -232,17 +253,5 @@ class LogInPasswordViewController: UIViewController {
         
         view.addSubview(registrationStack)
         NSLayoutConstraint.activate(registrationStackConstraints)
-    }
-    
-    @objc private func goOnRegisterScreen() {
-        presenter.goNextPush(vc: RegisterViewController())
-    }
-    
-    @objc private func goOnForgotPasswordScreen() {
-        presenter.goNextPush(vc: ForgotPasswordViewController())
-    }
-    
-    @objc private func goOnMainScreen() {
-        presenter.goNextFullScreen(vc: TravelerDriverViewController())
     }
 }

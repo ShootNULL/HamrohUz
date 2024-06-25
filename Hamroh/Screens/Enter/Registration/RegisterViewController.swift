@@ -35,6 +35,7 @@ class RegisterViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpTextField()
         setUpCheckButton()
@@ -47,7 +48,6 @@ class RegisterViewController: UIViewController {
         setUpHasAccountLabel()
         setUpExistingEnterButton()
         setUpExistingEnterStack()
-        setUpBackArrow()
     }
     
     private func setUpBackArrow() {
@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ]
         
         view.addSubview(mainTitle)
@@ -136,6 +136,8 @@ class RegisterViewController: UIViewController {
     
     private func setUpCreateButton() {
         
+        createButton.addTarget(self, action: #selector(goOnGetCodeScreen), for: .touchUpInside)
+        
         let createButtonConstraints = [
         
             createButton.topAnchor.constraint(equalTo: privacyLabel.bottomAnchor, constant: 30),
@@ -143,10 +145,12 @@ class RegisterViewController: UIViewController {
             createButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
         ]
         
-        createButton.addTarget(self, action: #selector(goOnGetCodeScreen), for: .touchUpInside)
-        
         view.addSubview(createButton)
         NSLayoutConstraint.activate(createButtonConstraints)
+    }
+    
+    @objc private func goOnGetCodeScreen() {
+        presenter.goNext(vc: GetCodeViewController())
     }
     
     private func setUpAnotherEnterlabel() {
@@ -173,6 +177,7 @@ class RegisterViewController: UIViewController {
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let googleButtonConstraints = [
+            
             googleButton.widthAnchor.constraint(equalToConstant: 46),
             googleButton.heightAnchor.constraint(equalToConstant: 46)
         ]
@@ -192,6 +197,7 @@ class RegisterViewController: UIViewController {
         appleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let appleButtonConstraints = [
+            
             appleButton.widthAnchor.constraint(equalToConstant: 46),
             appleButton.heightAnchor.constraint(equalToConstant: 46)
         ]
@@ -240,6 +246,7 @@ class RegisterViewController: UIViewController {
         existingEnterButton.setTitleColor(UIColor(named: "primaryBlack"), for: .normal)
         existingEnterButton.backgroundColor = .clear
         existingEnterButton.titleLabel?.font = UIFont(name: "SFProRounded-Semibold", size: 14)
+        existingEnterButton.addTarget(self, action: #selector(goOnLogInScreen), for: .touchUpInside)
         existingEnterButton.translatesAutoresizingMaskIntoConstraints = false
         
         let enterButtonConstraints = [
@@ -248,10 +255,12 @@ class RegisterViewController: UIViewController {
             existingEnterButton.heightAnchor.constraint(equalToConstant: 17)
         ]
         
-        existingEnterButton.addTarget(self, action: #selector(goOnLogInScreen), for: .touchUpInside)
-        
         existingEnterStack.addArrangedSubview(existingEnterButton)
         NSLayoutConstraint.activate(enterButtonConstraints)
+    }
+    
+    @objc private func goOnLogInScreen() {
+        presenter.goNext(vc: LogInViewController())
     }
     
     private func setUpExistingEnterStack() {
@@ -270,13 +279,5 @@ class RegisterViewController: UIViewController {
         
         view.addSubview(existingEnterStack)
         NSLayoutConstraint.activate(anotherEnterStackConstraints)
-    }
-    
-    @objc private func goOnLogInScreen() {
-        presenter.goNext(vc: LogInViewController())
-    }
-    
-    @objc private func goOnGetCodeScreen() {
-        presenter.goNext(vc: GetCodeViewController())
     }
 }

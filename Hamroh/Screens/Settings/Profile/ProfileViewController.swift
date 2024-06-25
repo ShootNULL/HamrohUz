@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    private let presenter = ProfileViewPresenter()
+    
     private let profileCard = PrimaryProfileCardK(photo: "photo", name: "Николай Жидков", shield: "safeShield", sub: "Надежный аккаунт") ?? UIView()
     private let mainView = UIView()
     private let mainTitle = UILabel()
@@ -35,17 +37,13 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Профиль"
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(named: "primaryBlack")!]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
         setUp()
     }
     
     private func setUp() {
-        
         view.backgroundColor = UIColor(named: "Base5")
-
+        
+        setUpNavigation()
         setUpProfileCard()
         setUpMainView()
         setUpMainTitle()
@@ -66,6 +64,14 @@ class ProfileViewController: UIViewController {
         setUpNotificationCard()
         setUpBecomeADriverCard()
         setUpExitCard()
+    }
+    
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Профиль"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     private func setUpProfileCard() {
@@ -121,6 +127,9 @@ class ProfileViewController: UIViewController {
     
     private func setUpInfoCard() {
         
+        infoCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOnInfoCardScreen)))
+        infoCard.isUserInteractionEnabled = true
+        
         let infoCardConstraints = [
         
             infoCard.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 16),
@@ -133,7 +142,14 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate(infoCardConstraints)
     }
     
+    @objc private func goOnInfoCardScreen() {
+        presenter.goNext(vc: ContactInfoViewController())
+    }
+    
     private func setUpSecurityCard() {
+        
+        securityCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOnSecurityCardScreen)))
+        securityCard.isUserInteractionEnabled = true
         
         let securityCardConstraints = [
         
@@ -147,7 +163,14 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint.activate(securityCardConstraints)
     }
     
+    @objc private func goOnSecurityCardScreen() {
+        presenter.goNext(vc: SecurityViewController())
+    }
+    
     private func setUpPayCard() {
+        
+        payCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOnPayCardScreen)))
+        payCard.isUserInteractionEnabled = true
         
         let payCardConstraints = [
         
@@ -159,6 +182,10 @@ class ProfileViewController: UIViewController {
         
         mainView.addSubview(payCard)
         NSLayoutConstraint.activate(payCardConstraints)
+    }
+    
+    @objc private func goOnPayCardScreen() {
+        presenter.goNext(vc: PayViewController())
     }
     
     private func setUpConditionsCard() {
@@ -214,6 +241,9 @@ class ProfileViewController: UIViewController {
     
     private func setUpAutoCard() {
         
+        autoCard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOnMyAutoCardScreen)))
+        autoCard.isUserInteractionEnabled = true
+        
         let autoCardConstraints = [
         
             autoCard.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 16),
@@ -224,6 +254,10 @@ class ProfileViewController: UIViewController {
         
         settingsView.addSubview(autoCard)
         NSLayoutConstraint.activate(autoCardConstraints)
+    }
+    
+    @objc private func goOnMyAutoCardScreen() {
+        presenter.goNext(vc: MyAutoViewController())
     }
     
     private func setUpDocsCard() {

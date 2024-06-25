@@ -13,7 +13,7 @@ class PayViewController: UIViewController {
     private let profileCard = PrimaryProfileCardK(photo: "photo", name: "Николай Жидков", shield: "safeShield", sub: "Надежный аккаунт") ?? UIView()
     private let payCard = PrimaryPayOrCarCardK(type: true, photo: "MasterCard", nameTitle: "MasterCard", sub: "0594", close: "StarChosen") ?? UIView()
     private let payCard2 = PrimaryPayOrCarCardK(type: true, photo: "Visa", nameTitle: "Visa", sub: "2411", close: "close") ?? UIView()
-    private let addCard = PrimaryAddCardK(photo: "Payment", nameTitle: "Добавьте новую карту", sub: "Чтобы оплачивать поездки и не волноваться о том, что забудете. Мы об этом позаботимся", numberOfLines: 2) ?? UIView()
+    private let addCard = PrimaryAddCardK(photo: "Payment", nameTitle: "Добавьте новую карту", nameColor: "primaryBlack", sub: "Чтобы оплачивать поездки и не волноваться о том, что забудете. Мы об этом позаботимся", subColor: "Base30", numberOfLines: 2) ?? UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,28 @@ class PayViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = UIColor(named: "Base5")
         
+        setUpNavigation()
         setUpProfileCard()
         setUpPayCard()
         setUpPayCardTwo()
         setUpAddCard()
+    }
+    
+    private func setUpNavigation() {
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+                              NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 16)!]
+        self.navigationItem.title = "Способы оплаты"
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backButtonImage = UIImage(named: "arrow.left")
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(goBack))
+        navigationItem.leftBarButtonItem = customBackButton
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func setUpProfileCard() {
@@ -85,5 +103,4 @@ class PayViewController: UIViewController {
         view.addSubview(addCard)
         NSLayoutConstraint.activate(addCardConstraints)
     }
-    
 }

@@ -163,11 +163,11 @@
 		5CB70E322BC5AD990093E0E1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D00049322C20DCD600086A79 /* Settings */,
-				D000492E2C20DCD600086A79 /* Chats */,
-				D065967C2C173EE300EE6436 /* MyDrives */,
-				D0BF412F2C05036700577EC3 /* SearchCreateDrive */,
 				5CE224C42B1DEDD500B7A4D2 /* Enter */,
+				D0BF412F2C05036700577EC3 /* SearchCreateDrive */,
+				D065967C2C173EE300EE6436 /* MyDrives */,
+				D000492E2C20DCD600086A79 /* Chats */,
+				D00049322C20DCD600086A79 /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -290,11 +290,11 @@
 		D00049322C20DCD600086A79 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D00049462C230DC700086A79 /* MyAuto */,
-				D00049412C22F51A00086A79 /* Pay */,
-				D000493C2C22EFA400086A79 /* Security */,
-				D00049372C22D8D500086A79 /* ContactInfo */,
 				D00049312C20DCD600086A79 /* Profile */,
+				D00049372C22D8D500086A79 /* ContactInfo */,
+				D000493C2C22EFA400086A79 /* Security */,
+				D00049412C22F51A00086A79 /* Pay */,
+				D00049462C230DC700086A79 /* MyAuto */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -454,13 +454,13 @@
 			path = Transport;
 			sourceTree = "<group>";
 		};
-		D065966A2C16334500EE6436 /* SelectDrive */ = {
+		D065966A2C16334500EE6436 /* SearchDrive */ = {
 			isa = PBXGroup;
 			children = (
 				D06596682C16333F00EE6436 /* SearchDriveViewController.swift */,
 				D065966B2C16337400EE6436 /* SearchDriveViewPresenter.swift */,
 			);
-			path = SelectDrive;
+			path = SearchDrive;
 			sourceTree = "<group>";
 		};
 		D065966D2C1635E200EE6436 /* Cells */ = {
@@ -528,14 +528,14 @@
 		D0BF412F2C05036700577EC3 /* SearchCreateDrive */ = {
 			isa = PBXGroup;
 			children = (
-				D06596752C16DB3900EE6436 /* Reservation */,
-				D06596702C16CF1C00EE6436 /* Drive */,
-				D065966A2C16334500EE6436 /* SelectDrive */,
-				D06596632C15F85A00EE6436 /* Transport */,
-				D065965E2C15E54700EE6436 /* TripDetails */,
-				D06596592C15CECE00EE6436 /* EndPoint */,
-				D06596542C15C74A00EE6436 /* StartPoint */,
 				D0BF412A2C04F3AA00577EC3 /* TravelerDriver */,
+				D06596542C15C74A00EE6436 /* StartPoint */,
+				D06596592C15CECE00EE6436 /* EndPoint */,
+				D065965E2C15E54700EE6436 /* TripDetails */,
+				D06596632C15F85A00EE6436 /* Transport */,
+				D065966A2C16334500EE6436 /* SearchDrive */,
+				D06596702C16CF1C00EE6436 /* Drive */,
+				D06596752C16DB3900EE6436 /* Reservation */,
 			);
 			path = SearchCreateDrive;
 			sourceTree = "<group>";

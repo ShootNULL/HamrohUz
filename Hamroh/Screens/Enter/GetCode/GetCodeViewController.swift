@@ -28,12 +28,12 @@ class GetCodeViewController: UIViewController {
     private func setUp() {
         view.backgroundColor = .white
         
+        setUpBackArrow()
         setUpTitle()
         setUpBasicLabel()
         setUpMail()
         setUpMailStack()
         setUpNextButton()
-        setUpBackArrow()
     }
     
     private func setUpBackArrow() {
@@ -53,7 +53,7 @@ class GetCodeViewController: UIViewController {
         let mainTitleConstraints = [
         
             mainTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            mainTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
         ]
         
         view.addSubview(mainTitle)
@@ -90,6 +90,7 @@ class GetCodeViewController: UIViewController {
         mailStack.translatesAutoresizingMaskIntoConstraints = false
         
         let mailStackConstraints = [
+            
             mailStack.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 16),
             mailStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             mailStack.widthAnchor.constraint(equalToConstant: 274)
@@ -101,13 +102,14 @@ class GetCodeViewController: UIViewController {
     
     private func setUpNextButton() {
         
+        nextButton.addTarget(self, action: #selector(goOnNextScreen), for: .touchUpInside)
+        
         let nextButtonConstraints = [
+            
             nextButton.topAnchor.constraint(equalTo: mailStack.bottomAnchor, constant: 120),
             nextButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             nextButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16)
         ]
-        
-        nextButton.addTarget(self, action: #selector(goOnNextScreen), for: .touchUpInside)
         
         view.addSubview(nextButton)
         NSLayoutConstraint.activate(nextButtonConstraints)

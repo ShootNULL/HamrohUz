@@ -853,18 +853,23 @@ final class PrimaryAddCardK: UIView {
     
     var photo: String
     var name: String
+    var nameColor: String
     var sub: String
+    var subColor: String
     var numberOfLines: Int
+
     
     private let mainImage = UIImageView()
     private let mainTitle = UILabel()
     private let subTitle = UILabel()
 
-    required init?(photo: String, nameTitle: String, sub: String, numberOfLines: Int) {
+    required init?(photo: String, nameTitle: String, nameColor: String, sub: String, subColor: String, numberOfLines: Int) {
         
         self.photo = photo
         self.name = nameTitle
+        self.nameColor = nameColor
         self.sub = sub
+        self.subColor = subColor
         self.numberOfLines = numberOfLines
         
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -904,7 +909,7 @@ final class PrimaryAddCardK: UIView {
     private func setUpMainTitle() {
         
         mainTitle.text = name
-        mainTitle.textColor = UIColor(named: "primaryBlack")
+        mainTitle.textColor = UIColor(named: nameColor)
         mainTitle.numberOfLines = 1
         mainTitle.font = UIFont(name: "SFProRounded-Medium", size: 16)
         mainTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -922,7 +927,7 @@ final class PrimaryAddCardK: UIView {
     private func setUpSubTitle() {
         
         subTitle.text = sub
-        subTitle.textColor = UIColor(named: "Base30")
+        subTitle.textColor = UIColor(named: subColor)
         subTitle.numberOfLines = numberOfLines
         subTitle.font = UIFont(name: "SFProRounded-Regular", size: 12)
         subTitle.translatesAutoresizingMaskIntoConstraints = false

@@ -10,9 +10,12 @@ import UIKit
 
 class TravelerDriverViewController: UIViewController {
     
+    private let presenter = TravelerDriverViewPresenter()
+    
     let items = ["Я попутчик", "Я водитель"]
     
     private let searchTitle = PrimaryTitleK(numberLines: 1, title: "Найти поездку") ?? UILabel()
+    private let createTitle = PrimaryTitleK(numberLines: 1, title: "Создать поездку") ?? UILabel()
     private var segmentedControl = UISegmentedControl()
     private let fromCard = PrimaryCardFromK(title: "Откуда", adress: "Введите полный адрес") ?? UIView()
     private let toCard = PrimaryCardToK(adress: "Введите полный адрес") ?? UIView()
@@ -24,10 +27,10 @@ class TravelerDriverViewController: UIViewController {
     private let peopleTitle = PrimaryTitleK(numberLines: 1, title: "Кол-во человек") ?? UILabel()
     private let peopleTextField = PrimaryTextFieldK(title: "", height: 46) ?? UITextField()
     private let latestDrives = PrimaryTitleK(numberLines: 1, title: "Предыдущие запросы") ?? UILabel()
-    private let searchButton = PrimaryButtonK(type: true, title: "Поиск предложений", height: 52) ?? UIButton()
     private let latestDrive1 = PrimaryViewLatestDriveseK(title: "Краснодар", subTitle: "Москва") ?? UIView()
     private let latestDrive2 = PrimaryViewLatestDriveseK(title: "Н. Новгород", subTitle: "Кстово") ?? UIView()
     private let latestDrive3 = PrimaryViewLatestDriveseK(title: "Тюмень", subTitle: "Патрушев") ?? UIView()
+    private let searchButton = PrimaryButtonK(type: true, title: "Поиск предложений", height: 52) ?? UIButton()
     
     private let fromCardForDriver = PrimaryCardFromK(title: "Откуда", adress: "Введите полный адрес") ?? UIView()
     private let lineView1 = UIView()
@@ -43,11 +46,13 @@ class TravelerDriverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUp()
     }
     
     private func setUp() {
         view.backgroundColor = .white
+        self.tabBarController?.hideNavigationBar()
         
         setUpSearchTitle()
         setUpSegmentedControl()
@@ -66,6 +71,7 @@ class TravelerDriverViewController: UIViewController {
         setUpLatestDrive2()
         setUpLatestDrive3()
         
+        setUpCreateTitle()
         setUpFromCardForDriver()
         setUpLineView1()
         setUpFromAdress1()
@@ -91,9 +97,30 @@ class TravelerDriverViewController: UIViewController {
         NSLayoutConstraint.activate(searchTitleConstraints)
     }
     
+    private func setUpCreateTitle() {
+        
+        createTitle.isHidden = true
+        
+        let createTitleConstraints = [
+            
+            createTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            createTitle.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16)
+        ]
+        
+        view.addSubview(createTitle)
+        NSLayoutConstraint.activate(createTitleConstraints)
+    }
+    
     private func setUpSegmentedControl() {
-     
+        
+        let titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
+            NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 12)!
+        ]
+        
         segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.layer.borderColor = UIColor.white.cgColor
         segmentedControl.layer.borderWidth = 0
@@ -102,25 +129,15 @@ class TravelerDriverViewController: UIViewController {
         segmentedControl.layer.masksToBounds = true
         segmentedControl.selectedSegmentTintColor = UIColor(named: "primaryWhite")
         segmentedControl.backgroundColor = UIColor(named: "base5")
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        let titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor(named: "primaryBlack")!,
-            NSAttributedString.Key.font: UIFont(name: "SFProRounded-Medium", size: 12)!
-        ]
-        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        
         segmentedControl.addTarget(self, action: #selector(changeColor), for: .valueChanged)
-        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         let segmentedControlConstraints = [
             
             segmentedControl.topAnchor.constraint(equalTo: searchTitle.bottomAnchor, constant: 20),
             segmentedControl.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             segmentedControl.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
-            segmentedControl.heightAnchor.constraint(equalToConstant: 32),
-//            segmentedControl.widthAnchor.constraint(equalToConstant: 361)
+            segmentedControl.heightAnchor.constraint(equalToConstant: 32)
         ]
         
         view.addSubview(segmentedControl)
@@ -131,6 +148,7 @@ class TravelerDriverViewController: UIViewController {
         
         switch sender.selectedSegmentIndex {
         case 0:
+            searchTitle.isHidden = false
             fromCard.isHidden = false
             toCard.isHidden = false
             dottedLine.isHidden = false
@@ -146,6 +164,7 @@ class TravelerDriverViewController: UIViewController {
             latestDrive2.isHidden = false
             latestDrive3.isHidden = false
             
+            createTitle.isHidden = true
             fromCardForDriver.isHidden = true
             lineView1.isHidden = true
             fromAdress1.isHidden = true
@@ -159,6 +178,7 @@ class TravelerDriverViewController: UIViewController {
             nextButton.isHidden = true
             
         case 1:
+            searchTitle.isHidden = true
             fromCard.isHidden = true
             toCard.isHidden = true
             dottedLine.isHidden = true
@@ -174,6 +194,7 @@ class TravelerDriverViewController: UIViewController {
             latestDrive2.isHidden = true
             latestDrive3.isHidden = true
             
+            createTitle.isHidden = false
             fromCardForDriver.isHidden = false
             lineView1.isHidden = false
             fromAdress1.isHidden = false
@@ -189,7 +210,6 @@ class TravelerDriverViewController: UIViewController {
         default:
             print("warning!")
         }
-        
     }
     
     private func setUpFromCard() {
@@ -229,7 +249,6 @@ class TravelerDriverViewController: UIViewController {
             
             dottedLine.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 21.4),
             dottedLine.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 60),
-            
         ]
         
         view.addSubview(dottedLine)
@@ -356,19 +375,6 @@ class TravelerDriverViewController: UIViewController {
         NSLayoutConstraint.activate(latestDrivesConstraints)
     }
     
-    private func setUpSearchButton() {
-        
-        let searchButtonConstraints = [
-            
-            searchButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            searchButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
-            searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
-        ]
-        
-        view.addSubview(searchButton)
-        NSLayoutConstraint.activate(searchButtonConstraints)
-    }
-    
     private func setUpLatestDrive1() {
         
         let latestDrive1Constraints = [
@@ -411,7 +417,24 @@ class TravelerDriverViewController: UIViewController {
         NSLayoutConstraint.activate(latestDrive3Constraints)
     }
     
+    private func setUpSearchButton() {
+        
+        searchButton.addTarget(self, action: #selector(goOnSearchDriveScreen), for: .touchUpInside)
+        
+        let searchButtonConstraints = [
+            
+            searchButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            searchButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ]
+        
+        view.addSubview(searchButton)
+        NSLayoutConstraint.activate(searchButtonConstraints)
+    }
     
+    @objc private func goOnSearchDriveScreen() {
+        presenter.goNext(vc: SearchDriveViewController())
+    }
     
     private func setUpFromCardForDriver() {
         
@@ -579,14 +602,21 @@ class TravelerDriverViewController: UIViewController {
     
     private func setUpNextButton() {
         
+        nextButton.isHidden = true
+        nextButton.addTarget(self, action: #selector(goOnStartPointScreen), for: .touchUpInside)
+        
         let nextButtonConstraints = [
             
-            nextButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            nextButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
+            nextButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            nextButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16),
             nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ]
         
         view.addSubview(nextButton)
         NSLayoutConstraint.activate(nextButtonConstraints)
+    }
+    
+    @objc private func goOnStartPointScreen() {
+        presenter.goNext(vc: StartPointViewController())
     }
 }

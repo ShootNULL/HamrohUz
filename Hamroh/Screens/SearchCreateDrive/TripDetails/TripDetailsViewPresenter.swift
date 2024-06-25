@@ -8,13 +8,18 @@
 import Foundation
 import UIKit
 
-protocol TripDetalsViewProtocol {
+protocol TripDetailsViewProtocol {
     func load() -> Void
 }
 
-class TripDetalsViewPresenter: TripDetalsViewProtocol {
+class TripDetailsViewPresenter: TripDetailsViewProtocol {
     
     func load() {
         // your code
+    }
+    
+    func goNext(vc: UIViewController) {
+        let nav = Navigation()
+        nav.navigateTo(VC: vc, style: .push)
     }
 }
