@@ -124,6 +124,11 @@ class LogInPasswordViewController: UIViewController {
     }
     
     @objc private func goOnMainScreen() {
+        
+        let auth = Auth()
+        
+        auth.auth(email: auth.getSecret(key: "email") ?? "", password: passwordTextField.text ?? "")
+                
         presenter.goNextFullScreen(vc: UINavigationController(rootViewController: TabBarController()))
     }
     

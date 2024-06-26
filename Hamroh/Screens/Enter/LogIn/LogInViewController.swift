@@ -98,6 +98,9 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func goOnLogInPasswordScreen() {
+        let auth = Auth()
+        auth.setSecret(key: "email", value: mailTextField.text ?? "")
+        
         presenter.goNext(vc: LogInPasswordViewController())
     }
     
