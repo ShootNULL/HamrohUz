@@ -72,7 +72,6 @@
 		D0AB02202BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */; };
 		D0BF412C2C04F3EA00577EC3 /* TravelerDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF412B2C04F3EA00577EC3 /* TravelerDriverViewController.swift */; };
 		D0BF412E2C04F3FE00577EC3 /* TravelerDriverViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF412D2C04F3FE00577EC3 /* TravelerDriverViewPresenter.swift */; };
-		FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,8 +91,6 @@
 		5CE224C92B1DEE1F00B7A4D2 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		5CE224CB2B1DEE2B00B7A4D2 /* EnterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewPresenter.swift; sourceTree = "<group>"; };
 		5CE224CF2B1DF01800B7A4D2 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
-		A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hamroh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.debug.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.debug.xcconfig"; sourceTree = "<group>"; };
 		D000492B2C20DCD600086A79 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		D000492C2C20DCD600086A79 /* MessagesViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewPresenter.swift; sourceTree = "<group>"; };
 		D000492F2C20DCD600086A79 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +142,6 @@
 		D0AB021F2BC53B3C00540225 /* RegistrationPaswordViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPaswordViewPresenter.swift; sourceTree = "<group>"; };
 		D0BF412B2C04F3EA00577EC3 /* TravelerDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelerDriverViewController.swift; sourceTree = "<group>"; };
 		D0BF412D2C04F3FE00577EC3 /* TravelerDriverViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelerDriverViewPresenter.swift; sourceTree = "<group>"; };
-		E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hamroh.release.xcconfig"; path = "Target Support Files/Pods-Hamroh/Pods-Hamroh.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBC595C6263389DCF0576413 /* Pods_Hamroh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +172,6 @@
 			children = (
 				5CE224AF2B1DED5A00B7A4D2 /* Hamroh */,
 				5CE224AE2B1DED5A00B7A4D2 /* Products */,
-				9A428AE510140B0F69692C06 /* Pods */,
-				F16E81A5F71BF3D351A02A9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,15 +243,6 @@
 				5CE224CF2B1DF01800B7A4D2 /* Kit.swift */,
 			);
 			path = Beauty;
-			sourceTree = "<group>";
-		};
-		9A428AE510140B0F69692C06 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */,
-				E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		D000492D2C20DCD600086A79 /* Messages */ = {
@@ -540,14 +524,6 @@
 			path = SearchCreateDrive;
 			sourceTree = "<group>";
 		};
-		F16E81A5F71BF3D351A02A9E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A558DB7D194440BD73ADF9DD /* Pods_Hamroh.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -555,7 +531,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE224C12B1DED5B00B7A4D2 /* Build configuration list for PBXNativeTarget "Hamroh" */;
 			buildPhases = (
-				9C4D474AD031FBF0A1B8B242 /* [CP] Check Pods Manifest.lock */,
 				5CE224A92B1DED5A00B7A4D2 /* Sources */,
 				5CE224AA2B1DED5A00B7A4D2 /* Frameworks */,
 				5CE224AB2B1DED5A00B7A4D2 /* Resources */,
@@ -593,6 +568,8 @@
 				Base,
 			);
 			mainGroup = 5CE224A42B1DED5A00B7A4D2;
+			packageReferences = (
+			);
 			productRefGroup = 5CE224AE2B1DED5A00B7A4D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -617,31 +594,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9C4D474AD031FBF0A1B8B242 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hamroh-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CE224A92B1DED5A00B7A4D2 /* Sources */ = {
@@ -845,13 +797,13 @@
 		};
 		5CE224C22B1DED5B00B7A4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBA861956F5451D12E04338C /* Pods-Hamroh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W4G8RWL3P3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hamroh/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hamroh;
@@ -874,13 +826,13 @@
 		};
 		5CE224C32B1DED5B00B7A4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5C1B38F439618CE00ACC62E /* Pods-Hamroh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W4G8RWL3P3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hamroh/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hamroh;

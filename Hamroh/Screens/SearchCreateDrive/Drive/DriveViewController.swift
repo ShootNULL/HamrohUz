@@ -45,7 +45,7 @@ class DriveViewController: UIViewController {
     private let connectionButton = PrimaryButtonK(type: false, title: "Связаться с водителем", height: 52) ?? UIButton()
     private let reserveButton = PrimaryButtonK(type: true, title: "Забронировать", height: 52) ?? UIButton()
     private let secureAcc = PrimaryAddCardK(photo: "safeShield", nameTitle: "Надежный аккаунт", nameColor: "primaryBlack", sub: "Водитель прошел полную проверку документов и совершил достаточное количество безопасных поездок с хорошими отзывами", subColor: "Base30", numberOfLines: 3) ?? UIView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

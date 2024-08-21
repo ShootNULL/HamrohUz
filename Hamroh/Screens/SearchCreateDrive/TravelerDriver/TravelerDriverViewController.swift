@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class TravelerDriverViewController: UIViewController {
-    
+
     private let presenter = TravelerDriverViewPresenter()
-    
+
     let items = ["Я попутчик", "Я водитель"]
-    
+
     private let searchTitle = PrimaryTitleK(numberLines: 1, title: "Найти поездку") ?? UILabel()
     private let createTitle = PrimaryTitleK(numberLines: 1, title: "Создать поездку") ?? UILabel()
     private var segmentedControl = UISegmentedControl()
@@ -31,7 +31,7 @@ class TravelerDriverViewController: UIViewController {
     private let latestDrive2 = PrimaryViewLatestDriveseK(title: "Н. Новгород", subTitle: "Кстово") ?? UIView()
     private let latestDrive3 = PrimaryViewLatestDriveseK(title: "Тюмень", subTitle: "Патрушев") ?? UIView()
     private let searchButton = PrimaryButtonK(type: true, title: "Поиск предложений", height: 52) ?? UIButton()
-    
+
     private let fromCardForDriver = PrimaryCardFromK(title: "Откуда", adress: "Введите полный адрес") ?? UIView()
     private let lineView1 = UIView()
     private let fromAdress1 = PrimaryProposedDrivesK(title: "Малая Ямская, 17А, г. Самарканд") ?? UIView()
@@ -43,17 +43,18 @@ class TravelerDriverViewController: UIViewController {
     private let toAdress2 = PrimaryProposedDrivesK(title: "Максима Горького, 24, г. Ташкент") ?? UIView()
     private let toAdress3 = PrimaryProposedDrivesK(title: "Областная, 11, Ташкентская область, г. Бухара") ?? UIView()
     private let nextButton = PrimaryButtonK(type: true, title: "Далее", height: 52) ?? UIButton()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setUp()
     }
-    
+
     private func setUp() {
         view.backgroundColor = .white
         self.tabBarController?.hideNavigationBar()
-        
+
+    
         setUpSearchTitle()
         setUpSegmentedControl()
         setUpFromCard()
@@ -70,7 +71,7 @@ class TravelerDriverViewController: UIViewController {
         setUpLatestDrive1()
         setUpLatestDrive2()
         setUpLatestDrive3()
-        
+
         setUpCreateTitle()
         setUpFromCardForDriver()
         setUpLineView1()
@@ -248,7 +249,7 @@ class TravelerDriverViewController: UIViewController {
         let dottedLineConstraints = [
             
             dottedLine.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 21.4),
-            dottedLine.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 60),
+            dottedLine.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 60)
         ]
         
         view.addSubview(dottedLine)
@@ -310,7 +311,7 @@ class TravelerDriverViewController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "SFProRounded-Regular", size: 12)!
         ]
         
-        dateTextField.attributedPlaceholder = NSAttributedString(string: "17 Ноября",attributes: attributes)
+        dateTextField.attributedPlaceholder = NSAttributedString(string: "17 Ноября", attributes: attributes)
         dateTextField.layer.borderColor = UIColor(named: "Base10")!.cgColor
         dateTextField.font = UIFont(name: "SFProRounded-Regular", size: 12)
         
